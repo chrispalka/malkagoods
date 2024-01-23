@@ -23,3 +23,14 @@
 .read-the-docs {
   color: #888;
 }
+
+.wrapper {
+  border: 2px solid yellow;
+  margin-right: auto; /* 1 */
+  margin-left: auto; /* 1 */
+
+  max-width: 960px; /* 2 */
+
+  padding-right: 10px; /* 3 */
+  padding-left: 10px; /* 3 */
+}

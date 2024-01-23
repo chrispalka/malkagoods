@@ -1,0 +1,110 @@
+.navContainer {
+  position: fixed;
+  display: flex;
+  width: 100vw;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  background-color: #000000;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  transition: all ease 0.23;
+  z-index: 9998;
+}
+
+.navActive {
+  left: 0;
+}
+
+.linkContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.linkContainer a {
+  color: #fff;
+  font-family: 'Gotham';
+  font-weight: 700;
+  padding: 1.5rem 0;
+}
+
+.linkContainer a:hover {
+  color: #7acee2;
+}
+
+.navIconContainer {
+  position: absolute;
+  display: flex;
+  transform: translate(-50%, -100%);
+  opacity: 0;
+  transition: all ease 0.3s;
+  /* padding: 1.5rem; */
+}
+
+.navIconContainer_active {
+  opacity: 100%;
+  transform: translate(-50%, -6%);
+}
+
+.navIconContainer a {
+  padding: 1.5rem 0.8rem;
+}
+
+.mobile_btn {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+  padding: 1.5rem;
+  cursor: pointer;
+}
+
+.nameContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1.5rem;
+  z-index: 9999;
+}
+
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  opacity: 0%;
+  transition: all ease-in-out 0.4s;
+}
+
+.flexContainer_active {
+  opacity: 100%;
+}
+
+.name {
+  color: #fff;
+  font-family: Gotham;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.imageContainer img {
+  filter: grayscale(100%);
+  height: 4.375rem;
+  border-radius: 50%;
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.imageContainer img:hover {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+.icon {
+  color: #fff;
+}
