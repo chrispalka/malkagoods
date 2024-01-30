@@ -1,13 +1,16 @@
 import { useState } from 'preact/hooks';
-
-import './App.css';
-import { SideNav } from './SideNav';
+import { Navbar } from './Navbar';
+import { Hero } from './Hero';
+import styles from './App.module.css';
 
 export function App() {
   return (
     <>
-      <SideNav />
-      <div className='wrapper'>Hi</div>
+      <Navbar />
+      <Hero />
+      <Hero />
+      <Hero />
+      {/* <div className={styles.wrapperContent}></div> */}
     </>
   );
 }

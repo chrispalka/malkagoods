@@ -1,0 +1,6 @@
+.hero {
+  background: url('../assets/hero.jpeg') no-repeat center/cover;
+  width: 100%;
+  height: 500px;
+  display: flex;
+}

@@ -1,56 +1,24 @@
-.navContainer {
-  position: fixed;
-  display: flex;
-  width: 100vw;
-  top: 0;
-  left: -100%;
-  height: 100vh;
-  background-color: #000000;
-  -webkit-transition: all ease 0.3s;
-  -moz-transition: all ease 0.3s;
-  transition: all ease 0.23;
-  z-index: 9998;
+.navbar {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 70px;
+  padding: 1rem;
+  transition: height ease-out 0.5s;
+  padding: 1.5rem;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
-.navActive {
+.scrolledCss {
+  position: fixed;
+  top: 0;
   left: 0;
 }
 
-.linkContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.linkContainer a {
-  color: #fff;
-  font-family: 'Gotham';
-  font-weight: 700;
-  padding: 1.5rem 0;
-}
-
-.linkContainer a:hover {
-  color: #7acee2;
-}
-
-.navIconContainer {
-  position: absolute;
-  display: flex;
-  transform: translate(-50%, -100%);
-  opacity: 0;
-  transition: all ease 0.3s;
-  /* padding: 1.5rem; */
-}
-
-.navIconContainer_active {
-  opacity: 100%;
-  transform: translate(-50%, -6%);
-}
-
-.navIconContainer a {
-  padding: 1.5rem 0.8rem;
+.navbar_active {
+  height: 250px;
 }
 
 .mobile_btn {
@@ -62,49 +30,59 @@
   cursor: pointer;
 }
 
-.nameContainer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 1.5rem;
-  z-index: 9999;
+.menu {
+  opacity: 0;
+  display: none;
+  position: relative;
+  /* border: 1px solid green; */
+  height: 200px;
+  width: 100%;
+  display: block;
+  transition: all ease 0.3s;
 }
 
-.flexContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  opacity: 0%;
-  transition: all ease-in-out 0.4s;
-}
-
-.flexContainer_active {
+.menu_active {
   opacity: 100%;
 }
 
-.name {
-  color: #fff;
-  font-family: Gotham;
-  font-weight: 700;
-  font-size: 1.25rem;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-.imageContainer img {
-  filter: grayscale(100%);
-  height: 4.375rem;
-  border-radius: 50%;
-  -webkit-filter: grayscale(100%);
-  -webkit-transition: all ease 0.5s;
-  -moz-transition: all ease 0.5s;
-  transition: all ease 0.5s;
+.linkContainer {
+  position: relative;
+  /* border: 1px solid purple; */
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 0;
 }
 
-.imageContainer img:hover {
-  -webkit-filter: grayscale(0%);
-  filter: grayscale(0%);
+.links {
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-.icon {
-  color: #fff;
+.linksFadeIn {
+  animation: fadeIn 1s;
+}
+
+.linksFadeOut {
+  animation: fadeOut 0.5s;
 }
