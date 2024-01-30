@@ -1,10 +1,13 @@
 .navbar {
-  position: relative;
+  position: sticky;
+  top: 0;
   width: 100%;
   overflow: hidden;
   height: 70px;
   padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
   transition: height ease-out 0.5s;
+  backdrop-filter: blur(10px);
   padding: 1.5rem;
   -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);

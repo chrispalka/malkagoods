@@ -51,8 +51,6 @@ export function Navbar() {
       className={
         showNav
           ? [styles.navbar, styles.navbar_active].join(' ')
-          : scrolled
-          ? [styles.navbar, styles.scrolledCss]
           : styles.navbar
       }
     >
