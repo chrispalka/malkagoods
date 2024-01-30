@@ -54,45 +54,47 @@ export function Navbar() {
           : styles.navbar
       }
     >
-      <div className={styles.logoContainer}>Malka Goods</div>
-      <div
-        className={styles.mobile_btn}
-        id='nav-click'
-        onClick={toggleShowNavDropdown}
-      >
-        {showNav ? (
-          <FontAwesomeIcon
-            className={styles.iconNavOpen}
-            icon={faXmark}
-            size='lg'
-          />
-        ) : (
-          <FontAwesomeIcon
-            className={styles.iconNavClosed}
-            icon={faBars}
-            size='lg'
-          />
-        )}
-      </div>
-      <div
-        className={
-          showNav ? [styles.menu, styles.menu_active].join(' ') : styles.menu
-        }
-      >
-        <div className={styles.linkContainer}>
-          {links.map((link, i) => (
-            <a
-              className={
-                showNav
-                  ? [styles.links, styles.linksFadeIn].join(' ')
-                  : styles.links
-              }
-              href={link.id}
-              key={i}
-            >
-              {link.name}
-            </a>
-          ))}
+      <div className={styles.navbarContent}>
+        <div className={styles.logoContainer}>Malka Goods</div>
+        <div
+          className={styles.mobile_btn}
+          id='nav-click'
+          onClick={toggleShowNavDropdown}
+        >
+          {showNav ? (
+            <FontAwesomeIcon
+              className={styles.iconNavOpen}
+              icon={faXmark}
+              size='lg'
+            />
+          ) : (
+            <FontAwesomeIcon
+              className={styles.iconNavClosed}
+              icon={faBars}
+              size='lg'
+            />
+          )}
+        </div>
+        <div
+          className={
+            showNav ? [styles.menu, styles.menu_active].join(' ') : styles.menu
+          }
+        >
+          <div className={styles.linkContainer}>
+            {links.map((link, i) => (
+              <a
+                className={
+                  showNav
+                    ? [styles.links, styles.linksFadeIn].join(' ')
+                    : styles.links
+                }
+                href={link.id}
+                key={i}
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </div>
