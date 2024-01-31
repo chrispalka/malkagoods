@@ -3,20 +3,16 @@ import useScrollLock from '../hooks/useScrollLock';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import styles from '../components/SideNav.module.css';
+import styles from '../components/Navbar.module.css';
 
 const links = [
   {
-    name: 'work',
-    id: '#home',
+    name: 'Featured',
+    id: '#featured',
   },
   {
-    name: 'me',
-    id: '#me',
-  },
-  {
-    name: 'me',
-    id: '#me',
+    name: 'Products',
+    id: '#products',
   },
 ];
 
@@ -62,17 +58,21 @@ export function Navbar() {
           onClick={toggleShowNavDropdown}
         >
           {showNav ? (
-            <FontAwesomeIcon
-              className={styles.iconNavOpen}
-              icon={faXmark}
-              size='lg'
-            />
+            <div className={styles.iconContainer}>
+              <FontAwesomeIcon
+                className={styles.icon}
+                icon={faXmark}
+                size='lg'
+              />
+            </div>
           ) : (
-            <FontAwesomeIcon
-              className={styles.iconNavClosed}
-              icon={faBars}
-              size='lg'
-            />
+            <div className={styles.iconContainer}>
+              <FontAwesomeIcon
+                className={styles.icon}
+                icon={faBars}
+                size='lg'
+              />
+            </div>
           )}
         </div>
         <div
@@ -90,10 +90,16 @@ export function Navbar() {
                 }
                 href={link.id}
                 key={i}
+                onClick={toggleShowNavDropdown}
               >
                 {link.name}
               </a>
             ))}
+            <div className={styles.contactContainer}>
+              <a href='mailto:malkagood@gmail.com'>
+                <FontAwesomeIcon icon={faEnvelope} size='lg' />
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,14 @@
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2em;
+}
+
+section {
+  margin-bottom: 8rem;
+}

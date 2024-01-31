@@ -1,9 +1,10 @@
-import { useState } from 'preact/hooks';
 import { Navbar } from './Navbar';
-import { FeaturedCarousel } from './FeaturedCarousel';
+import { Featured } from './Featured';
+import { Products } from './Products';
 import { Hero } from './Hero';
 import '@fontsource/noto-sans';
 import '@fontsource/noto-sans/700.css';
+import '@fontsource/lobster';
 import styles from './App.module.css';
 
 export function App() {
@@ -11,7 +12,8 @@ export function App() {
     <>
       <Navbar />
       <Hero />
-      <FeaturedCarousel />
+      <Featured />
+      <Products />
       {/* <div className={styles.wrapperContent}></div> */}
     </>
   );

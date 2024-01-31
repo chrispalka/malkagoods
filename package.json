@@ -9,12 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/lobster": "^5.0.18",
     "@fontsource/noto-sans": "^5.0.18",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "preact": "^10.19.3",
+    "react-dropdown": "^1.11.0",
     "react-responsive-carousel": "^3.2.23"
   },
   "devDependencies": {
