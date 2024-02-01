@@ -44,7 +44,13 @@ export function Products() {
           <div className={styles.flexItem}>
             <div className={styles.card}>
               <img className={styles.productImage} src={product.thumbnail} />
-              <div className={styles.productTitle}>{product.title}</div>
+              <div className={styles.detailsContainer}>
+                <div className={styles.productTitle}>{product.title}</div>
+                <div className={styles.productDescription}>
+                  {product.description}
+                </div>
+                <div>${product.price}</div>
+              </div>
             </div>
           </div>
         ))}
