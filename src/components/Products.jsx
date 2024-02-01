@@ -31,18 +31,20 @@ export function Products() {
         <h1 className={styles.title}>Products</h1>
       </div>
       <button onClick={() => setCategory(null)}>Reset</button>
-      <Dropdown
-        options={categories}
-        value={category}
-        onChange={(e) => setCategory(e.value)}
-        placeholder='Select Category'
-      />
-      <div className={styles.productsContainer}>
+      <div className={styles.dropdownContainer}>
+        <Dropdown
+          options={categories}
+          value={category}
+          onChange={(e) => setCategory(e.value)}
+          placeholder='Select Category'
+        />
+      </div>
+      <div className={styles.flexContainer}>
         {filteredProducts.map((product, index) => (
-          <div className={styles.col}>
-            <div>{product.title}</div>
-            <div>
+          <div className={styles.flexItem}>
+            <div className={styles.card}>
               <img className={styles.productImage} src={product.thumbnail} />
+              <div className={styles.productTitle}>{product.title}</div>
             </div>
           </div>
         ))}
