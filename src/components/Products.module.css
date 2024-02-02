@@ -1,7 +1,86 @@
 .titleContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin-bottom: 1rem;
+}
+
+.buttonContainer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.resetButton {
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-size: 16px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: 0.25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform, opacity;
+  z-index: 0;
+}
+
+.resetButton:hover {
+  background: #f6f9fe;
+  color: #174ea6;
+}
+
+.resetButton:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%),
+    0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+.resetButton:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+.resetButton:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 2px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 6px 10px 4px;
+}
+
+.resetButton:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+.resetButton:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 4px 4px 0,
+    rgba(60, 64, 67, 0.15) 0 8px 12px 6px;
+}
+
+.resetButton:disabled {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
 }
 
 .title {
@@ -16,25 +95,18 @@ section {
 }
 
 .flexContainer {
-  display: -webkit-flex;
+  max-width: 1335px;
+  margin: 0 auto;
   display: flex;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
+  justify-content: center;
   flex-wrap: wrap;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-content: stretch;
-  align-content: stretch;
-  -webkit-align-items: flex-start;
-  align-items: flex-start;
+  gap: 10px;
 }
 
-.flexItem {
-  -webkit-flex: 0 1 auto;
-  flex: 0 1 auto;
-  -webkit-align-self: auto;
-  align-self: auto;
+.item {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
   margin-bottom: 2rem;
   width: 100%;
 }
@@ -67,7 +139,11 @@ section {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   height: 500px;
-  width: 100%;
+  flex-basis: 100%;
+  -ms-flex: auto;
+  width: 259px;
+  position: relative;
+  box-sizing: border-box;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -76,8 +152,6 @@ section {
 }
 
 .dropdownContainer {
-  display: block;
-  justify-content: center;
   width: 100%;
   margin-bottom: 2rem;
 }
@@ -85,18 +159,35 @@ section {
 /* LAPTOP DESKTOP */
 
 @media (min-width: 64.0625rem) and (max-width: 80rem) {
+  .item {
+    height: 500px;
+    width: 400px;
+  }
+  .dropdownContainer {
+    display: flex;
+    width: auto;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
 /* LARGE SCREENS */
 
 @media (min-width: 80.0625rem) {
-  .productsContainer {
+  .flexContainer {
     display: flex;
+    flex-wrap: wrap;
   }
-  .col {
-    width: 100%;
-    margin: 0 0 10px 0;
+  .item {
+    height: 500px;
+    width: 400px;
   }
+
+  .card {
+    height: 500px;
+    width: 259px;
+  }
+
   .productImage {
     width: 100%;
     height: 300px;
@@ -104,15 +195,8 @@ section {
 
   .dropdownContainer {
     display: flex;
-  }
-
-  .flexItem {
-    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
     width: auto;
-  }
-
-  .card {
-    height: 500px;
-    width: 500px;
   }
 }

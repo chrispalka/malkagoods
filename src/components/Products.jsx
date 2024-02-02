@@ -26,11 +26,8 @@ export function Products() {
   return (
     <section id='products'>
       <div className={styles.titleContainer}>
-        {console.log(category)}
-        {console.log(filteredProducts)}
         <h1 className={styles.title}>Products</h1>
       </div>
-      <button onClick={() => setCategory(null)}>Reset</button>
       <div className={styles.dropdownContainer}>
         <Dropdown
           options={categories}
@@ -38,10 +35,18 @@ export function Products() {
           onChange={(e) => setCategory(e.value)}
           placeholder='Select Category'
         />
+        <div className={styles.buttonContainer}>
+          <button
+            className={styles.resetButton}
+            onClick={() => setCategory(null)}
+          >
+            Reset
+          </button>
+        </div>
       </div>
       <div className={styles.flexContainer}>
         {filteredProducts.map((product, index) => (
-          <div className={styles.flexItem}>
+          <div className={styles.item}>
             <div className={styles.card}>
               <img className={styles.productImage} src={product.thumbnail} />
               <div className={styles.detailsContainer}>
