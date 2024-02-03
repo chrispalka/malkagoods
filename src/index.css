@@ -14,4 +14,28 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6.25rem;
+}
+
+section {
+  margin-bottom: 8rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 10rem;
+}
+
+/* LAPTOP DESKTOP */
+
+@media (min-width: 64.0625rem) and (max-width: 80rem) {
+  section {
+    padding-top: 0rem;
+  }
+}
+
+/* LARGE SCREENS */
+
+@media (min-width: 80.0625rem) {
+  section {
+    padding-top: 0rem;
+  }
 }

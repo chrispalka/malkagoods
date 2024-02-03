@@ -88,12 +88,6 @@
   font-size: 2em;
 }
 
-section {
-  margin-bottom: 8rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
 .flexContainer {
   max-width: 1335px;
   margin: 0 auto;
@@ -177,6 +171,7 @@ section {
   .flexContainer {
     display: flex;
     flex-wrap: wrap;
+    max-width: 2000px;
   }
   .item {
     height: 500px;

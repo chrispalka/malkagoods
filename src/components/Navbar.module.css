@@ -139,6 +139,9 @@
   .nameContainer {
     display: none;
   }
+  .navbar_active {
+    height: 70px;
+  }
 }
 
 /* LARGE SCREENS */
@@ -180,5 +183,9 @@
 
   .contactContainer {
     display: none;
+  }
+
+  .navbar_active {
+    height: 70px;
   }
 }
