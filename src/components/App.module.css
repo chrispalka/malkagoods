@@ -11,6 +11,11 @@
   max-width: 100%;
 }
 
+.flexWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (min-width: 48rem) {
   .wrapperContent {
     width: 750px;
