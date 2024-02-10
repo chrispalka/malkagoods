@@ -14,8 +14,10 @@ export function App() {
       <Navbar />
       <div className={styles.flexWrapper}>
         <SideNav />
-        <Featured />
-        <Products />
+        <div>
+          <Featured />
+          <Products />
+        </div>
       </div>
       {/* <div className={styles.wrapperContent}></div> */}
     </>

@@ -1,29 +1,22 @@
 import { useState } from 'preact/hooks';
 import useScrollLock from '../hooks/useScrollLock';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faFilter,
-  faXmark,
-  faSliders,
-  faEnvelope,
-} from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faFilter, faXmark } from '@fortawesome/free-solid-svg-icons';
+import products from '../assets/products.json';
 import styles from '../components/SideNav.module.css';
 
-const links = [
-  {
-    name: 'work',
-    id: '#home',
-  },
-  {
-    name: 'me',
-    id: '#me',
-  },
-];
-
 export function SideNav() {
-  const [showNav, setShowNav] = useState(false);
+  const [showNav, setShowNav] = useState(true);
   const { lockScroll, unlockScroll } = useScrollLock();
+
+  const categories = [
+    ...new Set(
+      products['products'].map(
+        (item) =>
+          `${item.category.slice(0, 1).toUpperCase() + item.category.slice(1)}`
+      )
+    ),
+  ].sort();
 
   const toggleShowNav = () => {
     setShowNav(!showNav);
@@ -57,6 +50,9 @@ export function SideNav() {
         }
       >
         <div className={styles.mobile_btn} onClick={toggleShowNav}>
+          <div>
+            <span>Filter</span>
+          </div>
           <FontAwesomeIcon
             className={styles.iconNavClosed}
             icon={faXmark}
@@ -64,37 +60,13 @@ export function SideNav() {
           />
         </div>
         <div className={styles.linkContainer}>
-          {links.map((link, i) => (
-            <a href={link.id} key={i}>
-              {link.name}
-            </a>
-          ))}
-          <div className={styles.navIconContainerWrapper}>
-            <div
-              className={
-                showNav
-                  ? [
-                      styles.navIconContainer,
-                      styles.navIconContainer_active,
-                    ].join(' ')
-                  : styles.navIconContainer
-              }
-            >
-              <a href='mailto:jimcookemedia@gmail.com'>
-                <FontAwesomeIcon
-                  className={styles.iconLinks}
-                  icon={faEnvelope}
-                  size='lg'
-                />
+          <h3>Categories</h3>
+          <div className={styles.categoriesContainer}>
+            {categories.map((category, i) => (
+              <a href={category.id} key={i}>
+                {category}
               </a>
-              <a href='mailto:jimcookemedia@gmail.com'>
-                <FontAwesomeIcon
-                  className={styles.iconLinks}
-                  icon={faLinkedin}
-                  size='lg'
-                />
-              </a>
-            </div>
+            ))}
           </div>
         </div>
       </div>
