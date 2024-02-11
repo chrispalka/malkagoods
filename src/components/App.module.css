@@ -1,39 +1,15 @@
-.wrapperContent {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  top: 75px;
-  border: 2px solid red;
-  margin-right: auto;
-  margin-left: auto;
-  /* for edge cases: */
-  width: 100%;
-  max-width: 100%;
-}
-
 .flexWrapper {
   display: flex;
   flex-direction: column;
 }
 
 @media (min-width: 48rem) {
-  .wrapperContent {
-    width: 750px;
-  }
 }
 
 @media (min-width: 62rem) {
-  .wrapperContent {
-    width: 970px;
-  }
 }
 
 @media (min-width: 80.0625rem) {
-  .wrapperContent {
-    width: 1170px;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
   .flexWrapper {
     flex-direction: row;
   }

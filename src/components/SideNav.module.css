@@ -2,7 +2,7 @@
   position: absolute;
   width: 100vw;
   height: 100vh;
-  bottom: -100%;
+  bottom: 100%;
   background-color: #fff;
   -webkit-transition: all ease 0.3s;
   -moz-transition: all ease 0.3s;
@@ -83,6 +83,7 @@
   border: 1px solid rgb(217, 214, 214);
   border-radius: 5px;
   padding: 0.5rem;
+  width: 100%;
 }
 
 .nameContainer {
