@@ -10,6 +10,16 @@
   z-index: 9999;
 }
 
+.filterButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border: 1px solid rgba(217, 214, 214);
+  border-radius: 5px;
+}
+
 .navActive {
   bottom: 0;
 }
@@ -19,7 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid rgba(217, 214, 214, 0.467);
+  border: 1px solid rgba(217, 214, 214);
   width: 100vw;
   top: 0;
   right: 0;
@@ -80,9 +90,9 @@
 }
 
 .searchContainer input {
-  border: 1px solid rgb(217, 214, 214);
+  border: 1px solid rgba(217, 214, 214);
   border-radius: 5px;
-  padding: 0.5rem;
+  padding: 1rem;
   width: 100%;
 }
 

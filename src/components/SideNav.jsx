@@ -7,29 +7,32 @@ import styles from '../components/SideNav.module.css';
 
 export function SideNav({ handleSetProducts }) {
   const [showNav, setShowNav] = useState(false);
-  const [filteredProducts, setFilteredProducts] = useState([]);
   const [category, setCategory] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
   const { lockScroll, unlockScroll } = useScrollLock();
 
   useEffect(() => {
-    const filteredProducts =
+    const products =
       category !== '' && category !== null
         ? productsList['products'].filter(
             (p) => p.category === category.toLowerCase()
           )
+        : searchQuery !== ''
+        ? productsList['products'].filter((p) =>
+            p.title.toLocaleLowerCase().includes(searchQuery)
+          )
         : productsList['products'];
-    setFilteredProducts(filteredProducts);
-    handleSetProducts(filteredProducts);
-  }, [category]);
+    handleSetProducts(products);
+  }, [category, searchQuery]);
 
   // useEffect(() => {
   //   const results = filteredProducts.filter((product) => {
   //     product.title.toLowerCase().includes(searchQuery);
   //   });
   //   setFilteredProducts(results);
-  //   handleSetProducts(filteredProducts);
-  // }, []);
+  //   console.log('filteredProducts: ', filteredProducts);
+  //   // handleSetProducts(filteredProducts);
+  // }, [searchQuery]);
 
   const categories = [
     ...new Set(
@@ -50,25 +53,35 @@ export function SideNav({ handleSetProducts }) {
   };
 
   const handleSetCategory = (category) => {
+    setSearchQuery('');
     setCategory(category);
     toggleShowNav();
   };
 
   const handleChange = (e) => {
+    setCategory('');
     setSearchQuery(e.target.value.toLowerCase());
   };
 
   return (
     <>
       <div className={styles.filterContainer} id='nav-click'>
-        <FontAwesomeIcon
-          className={styles.iconNavClosed}
-          icon={faFilter}
-          size='lg'
-          onClick={toggleShowNav}
-        />
+        <div className={styles.filterButton}>
+          <FontAwesomeIcon
+            className={styles.iconNavClosed}
+            icon={faFilter}
+            size='lg'
+            onClick={toggleShowNav}
+          />
+        </div>
         <div className={styles.searchContainer}>
-          <input icon='search' placeholder='Search' onChange={handleChange} />
+          <input
+            id='search'
+            icon='search'
+            placeholder='Search'
+            value={searchQuery}
+            onChange={handleChange}
+          />
         </div>
       </div>
       <div
