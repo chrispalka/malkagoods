@@ -13,7 +13,6 @@ export function App() {
 
   const handleSetProducts = (products) => {
     setProducts(products);
-    console.log(products);
   };
 
   return (

@@ -2,7 +2,7 @@
   position: absolute;
   width: 100vw;
   height: 100vh;
-  bottom: 100%;
+  top: -100%;
   background-color: #fff;
   -webkit-transition: all ease 0.3s;
   -moz-transition: all ease 0.3s;
@@ -21,7 +21,7 @@
 }
 
 .navActive {
-  bottom: 0;
+  top: 0;
 }
 
 .mobile_btn {
