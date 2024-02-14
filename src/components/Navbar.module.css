@@ -9,15 +9,12 @@
   transition: height ease-out 0.5s;
   backdrop-filter: blur(10px);
   padding: 1.5rem;
+}
+
+.scrolled {
   -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-}
-
-.scrolledCss {
-  position: fixed;
-  top: 0;
-  left: 0;
 }
 
 .contactContainer {

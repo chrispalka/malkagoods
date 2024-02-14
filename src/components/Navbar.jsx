@@ -24,7 +24,7 @@ export function Navbar() {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    if (offset > 200) {
+    if (offset > 25) {
       setScrolled(true);
     } else {
       setScrolled(false);
@@ -45,8 +45,12 @@ export function Navbar() {
   return (
     <div
       className={
-        showNav
+        showNav && scrolled
+          ? [styles.navbar, styles.navbar_active, styles.scrolled].join(' ')
+          : showNav
           ? [styles.navbar, styles.navbar_active].join(' ')
+          : scrolled
+          ? [styles.navbar, styles.scrolled].join(' ')
           : styles.navbar
       }
     >
