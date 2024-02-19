@@ -68,7 +68,7 @@ export function SideNav({ handleSetProducts }) {
       <div className={styles.filterContainer} id='nav-click'>
         <div className={styles.filterButton}>
           <FontAwesomeIcon
-            className={styles.iconNavClosed}
+            className={styles.icon}
             icon={faFilter}
             size='lg'
             onClick={toggleShowNav}
@@ -96,7 +96,7 @@ export function SideNav({ handleSetProducts }) {
             <span>Filter</span>
           </div>
           <FontAwesomeIcon
-            className={styles.iconNavClosed}
+            className={styles.icon}
             icon={faXmark}
             size='lg'
             onClick={toggleShowNav}

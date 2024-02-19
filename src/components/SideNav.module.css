@@ -1,9 +1,9 @@
 .navContainer {
   position: absolute;
   width: 100vw;
-  height: 100vh;
-  top: -110%;
-  background-color: #fff;
+  height: 100%;
+  top: -150%;
+  background-color: #f4f6f5;
   -webkit-transition: all ease 0.3s;
   -moz-transition: all ease 0.3s;
   transition: all ease 0.23;
@@ -37,6 +37,10 @@
   padding: 1rem;
 }
 
+.mobile_btn span {
+  color: #333333;
+}
+
 .linkContainer {
   padding: 4.5rem 1rem;
   width: 100%;
@@ -50,9 +54,13 @@
 }
 
 .linkContainer a {
-  color: black;
+  color: #333333;
   padding: 1rem 0;
   text-decoration: none;
+}
+
+.linkContainer h3 {
+  color: #333333;
 }
 
 .linkContainer a:hover {
@@ -125,39 +133,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  /* opacity: 0%;
-  transition: all ease-in-out 0.4s; */
 }
 
-.flexContainer_active {
-  /* opacity: 100%; */
-}
-
-.imageContainer img {
-  filter: grayscale(100%);
-  height: 4.375rem;
-  border-radius: 50%;
-  -webkit-filter: grayscale(100%);
-  -webkit-transition: all ease 0.5s;
-  -moz-transition: all ease 0.5s;
-  transition: all ease 0.5s;
-}
-
-.imageContainer img:hover {
-  -webkit-filter: grayscale(0%);
-  filter: grayscale(0%);
-}
-
-.iconNavClosed {
-  color: #272932;
-}
-
-.iconNavOpen {
-  color: #e6e8e6;
-}
-
-.iconLinks {
-  color: #e6e8e6;
+.icon {
+  color: #333333;
 }
 
 /* TABLET */

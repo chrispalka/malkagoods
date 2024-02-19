@@ -13,12 +13,10 @@
 }
 
 body {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
+  background-color: #f4f6f5;
 }
 
 html {
-  height: -webkit-fill-available;
   scroll-behavior: smooth;
   scroll-padding-top: 6.25rem;
 }

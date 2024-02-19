@@ -89,25 +89,26 @@
 }
 
 .flexContainer {
-  max-width: 1335px;
-  margin: 0 auto;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: 10px;
+  /* gap: 10px; */
 }
 
 .item {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  margin-bottom: 2rem;
-  width: 100%;
+  flex: 0 1 50%;
+  height: 300px;
+  width: 200px;
+  overflow: hidden;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .productImage {
   width: 100%;
-  height: 300px;
+  height: 150px;
+  border-radius: 5px 5px 0 0;
   object-fit: cover;
 }
 
@@ -132,10 +133,8 @@
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  height: 500px;
-  flex-basis: 100%;
-  -ms-flex: auto;
-  width: 259px;
+  height: 100%;
+  border-radius: 5px;
   position: relative;
   box-sizing: border-box;
 }

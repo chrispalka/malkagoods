@@ -5,8 +5,9 @@
   overflow: hidden;
   height: 70px;
   z-index: 9999;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(244, 246, 245, 0.8);
   transition: height ease-out 0.5s;
+  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(10px);
   padding: 1.5rem;
 }
@@ -32,10 +33,11 @@
 }
 
 .icon {
+  /* border: 3px solid red; */
   border: 1px solid rgb(217, 214, 214);
   padding: 0.5rem;
   border-radius: 5px;
-  color: rgb(114, 111, 111);
+  color: #333333;
 }
 
 .navbar_active {
@@ -45,6 +47,7 @@
 .logoContainer {
   cursor: pointer;
   font-family: 'Lobster';
+  color: #333333;
   font-weight: 700;
   font-size: 18px;
 }
