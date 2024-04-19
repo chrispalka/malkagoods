@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.556.0",
+    "@aws-sdk/credential-providers": "^3.556.0",
     "@fontsource/lobster": "^5.0.18",
     "@fontsource/noto-sans": "^5.0.18",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",

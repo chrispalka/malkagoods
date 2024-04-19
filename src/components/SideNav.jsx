@@ -2,46 +2,16 @@ import { useState, useEffect } from 'preact/hooks';
 import useScrollLock from '../hooks/useScrollLock';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter, faXmark } from '@fortawesome/free-solid-svg-icons';
-import productsList from '../assets/products.json';
 import styles from '../components/SideNav.module.css';
 
-export function SideNav({ handleSetProducts }) {
+export function SideNav({
+  handleSetCategory,
+  handleSetSearchQuery,
+  categories,
+}) {
   const [showNav, setShowNav] = useState(false);
-  const [category, setCategory] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
   const { lockScroll, unlockScroll } = useScrollLock();
-
-  useEffect(() => {
-    const products =
-      category !== '' && category !== null
-        ? productsList['products'].filter(
-            (p) => p.category === category.toLowerCase()
-          )
-        : searchQuery !== ''
-        ? productsList['products'].filter((p) =>
-            p.title.toLocaleLowerCase().includes(searchQuery)
-          )
-        : productsList['products'];
-    handleSetProducts(products);
-  }, [category, searchQuery]);
-
-  // useEffect(() => {
-  //   const results = filteredProducts.filter((product) => {
-  //     product.title.toLowerCase().includes(searchQuery);
-  //   });
-  //   setFilteredProducts(results);
-  //   console.log('filteredProducts: ', filteredProducts);
-  //   // handleSetProducts(filteredProducts);
-  // }, [searchQuery]);
-
-  const categories = [
-    ...new Set(
-      productsList['products'].map(
-        (item) =>
-          `${item.category.slice(0, 1).toUpperCase() + item.category.slice(1)}`
-      )
-    ),
-  ].sort();
 
   const toggleShowNav = () => {
     setShowNav(!showNav);
@@ -52,15 +22,15 @@ export function SideNav({ handleSetProducts }) {
     }
   };
 
-  const handleSetCategory = (category) => {
-    setSearchQuery('');
-    setCategory(category);
+  const categoryOnChange = (category) => {
+    handleSetSearchQuery('');
+    handleSetCategory(category);
     toggleShowNav();
   };
 
   const handleChange = (e) => {
-    setCategory('');
-    setSearchQuery(e.target.value.toLowerCase());
+    handleSetCategory('');
+    handleSetSearchQuery(e.target.value.toLowerCase());
   };
 
   return (
@@ -109,7 +79,7 @@ export function SideNav({ handleSetProducts }) {
               <a
                 href={category.id}
                 key={i}
-                onClick={() => handleSetCategory(category)}
+                onClick={() => categoryOnChange(category)}
               >
                 {category}
               </a>
