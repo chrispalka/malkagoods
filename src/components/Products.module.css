@@ -43,7 +43,11 @@
 
 .productTitle {
   font-weight: 700;
+  font-size: 0.9em;
   margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   /* padding: 0.5rem; */
 }
 

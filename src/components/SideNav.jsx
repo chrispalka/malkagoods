@@ -4,11 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter, faXmark } from '@fortawesome/free-solid-svg-icons';
 import styles from '../components/SideNav.module.css';
 
-export function SideNav({
-  handleSetCategory,
-  handleSetSearchQuery,
-  categories,
-}) {
+export function SideNav({ handleSetCategory, handleSearchQuery, categories }) {
   const [showNav, setShowNav] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const { lockScroll, unlockScroll } = useScrollLock();
@@ -23,14 +19,16 @@ export function SideNav({
   };
 
   const categoryOnChange = (category) => {
-    handleSetSearchQuery('');
+    handleSearchQuery('');
     handleSetCategory(category);
     toggleShowNav();
   };
 
   const handleChange = (e) => {
+    const query = e.target.value.toLowerCase();
     handleSetCategory('');
-    handleSetSearchQuery(e.target.value.toLowerCase());
+    setSearchQuery(query);
+    handleSearchQuery(searchQuery);
   };
 
   return (

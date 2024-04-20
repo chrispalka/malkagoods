@@ -1,24 +1,25 @@
 import styles from './Products.module.css';
 
-export function Products({ searchQuery, products }) {
+export function Products({ products }) {
   return (
     <section id='products'>
       <div className={styles.flexContainer}>
-        {products !== undefined && (
+        {products.length > 0 && (
           <>
             {products.map((product, index) => (
               <div className={styles.item}>
                 <div className={styles.card}>
                   <img
                     className={styles.productImage}
-                    src={product.thumbnail}
+                    src={product.images[0].images[1].link}
                   />
                   <div className={styles.detailsContainer}>
-                    <div className={styles.productTitle}>{product.title}</div>
-                    <div className={styles.productDescription}>
-                      {product.description}
+                    <div className={styles.productTitle}>
+                      {product.summaries[0].itemName}
                     </div>
-                    <div>${product.price}</div>
+                    <div className={styles.productDescription}>
+                      {product.asin}
+                    </div>
                   </div>
                 </div>
               </div>
