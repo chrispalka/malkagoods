@@ -2,12 +2,21 @@ import { useState, useEffect } from 'preact/hooks';
 import useScrollLock from '../hooks/useScrollLock';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter, faXmark } from '@fortawesome/free-solid-svg-icons';
-import styles from '../components/SideNav.module.css';
+import styles from '../components/Filter.module.css';
 
-export function SideNav({ handleSetCategory, handleSearchQuery, categories }) {
+export function Filter({ handleSetCategory, handleSearchQuery, categories }) {
   const [showNav, setShowNav] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [category, setCategory] = useState('');
   const { lockScroll, unlockScroll } = useScrollLock();
+
+  useEffect(() => {
+    handleSearchQuery(searchQuery);
+  }, [searchQuery]);
+
+  useEffect(() => {
+    handleSetCategory(category.toLowerCase());
+  }, [category]);
 
   const toggleShowNav = () => {
     setShowNav(!showNav);
@@ -18,38 +27,53 @@ export function SideNav({ handleSetCategory, handleSearchQuery, categories }) {
     }
   };
 
+  const clearCategory = () => {
+    setCategory('');
+  };
+
   const categoryOnChange = (category) => {
     handleSearchQuery('');
-    handleSetCategory(category);
+    setCategory(category);
     toggleShowNav();
   };
 
   const handleChange = (e) => {
     const query = e.target.value.toLowerCase();
-    handleSetCategory('');
     setSearchQuery(query);
-    handleSearchQuery(searchQuery);
+    handleSetCategory('');
   };
 
   return (
     <>
       <div className={styles.filterContainer} id='nav-click'>
-        <div className={styles.filterButton}>
-          <FontAwesomeIcon
-            className={styles.icon}
-            icon={faFilter}
-            size='lg'
-            onClick={toggleShowNav}
-          />
+        <div>
+          <div className={styles.filterButton}>
+            <FontAwesomeIcon
+              className={styles.icon}
+              icon={faFilter}
+              size='lg'
+              onClick={toggleShowNav}
+            />
+          </div>
+          <div className={styles.searchContainer}>
+            <input
+              id='search'
+              icon='search'
+              placeholder='Search'
+              value={searchQuery}
+              onChange={handleChange}
+            />
+          </div>
         </div>
-        <div className={styles.searchContainer}>
-          <input
-            id='search'
-            icon='search'
-            placeholder='Search'
-            value={searchQuery}
-            onChange={handleChange}
-          />
+        <div className={styles.pillContainer}>
+          {category !== '' && (
+            <div className={styles.categoryPill} onClick={clearCategory}>
+              <div className={styles.pillContents}>
+                <FontAwesomeIcon className={styles.icon} icon={faXmark} />
+                <div className={styles.category}>{category}</div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
       <div

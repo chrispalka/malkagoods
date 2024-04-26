@@ -3,7 +3,7 @@ import useDebounce from '../hooks/debounce';
 import { Navbar } from './Navbar';
 import { Featured } from './Featured';
 import { Products } from './Products';
-import { SideNav } from './SideNav';
+import { Filter } from './Filter';
 import { fetchProducts } from '../api/S3Service';
 
 import '@fontsource/noto-sans';
@@ -25,7 +25,6 @@ export function App() {
       try {
         const response = await fetchProducts();
         setProducts(response);
-        console.log('Products SET');
       } catch (error) {
         console.error('Error fetching S3 Object: ', error);
         throw error;
@@ -33,7 +32,10 @@ export function App() {
     };
     fetchData();
   }, []);
+
+  /** SET CATEGORY LIST */
   useEffect(() => {
+    console.log(`${products.length} products fetched from S3`);
     const categoryList = [
       ...new Set(
         products.map(
@@ -48,8 +50,8 @@ export function App() {
     setCategories(categoryList);
   }, [products]);
 
-  const handleSearchQuery = (searchQuery) => {
-    setSearchQuery(searchQuery);
+  const handleSearchQuery = (passedSearchQuery) => {
+    setSearchQuery(passedSearchQuery);
   };
   const debounceHandleSearchOnChange = useDebounce(searchQuery, 500);
 
@@ -57,29 +59,32 @@ export function App() {
     setCategory(category);
   };
 
+  /** FILTERING */
+
   useEffect(() => {
+    console.log('category:', category);
     const filteredProductList =
       category !== '' && category !== null
         ? products.filter(
             (p) =>
-              p.summaries[0].websiteDisplayGroupName === category.toLowerCase()
+              p.summaries[0].websiteDisplayGroupName.toLowerCase() === category
           )
-        : searchQuery !== '' && searchQuery !== undefined
+        : searchQuery !== '' && searchQuery !== null
         ? products.filter((p) =>
             p.summaries[0].itemName.toLowerCase().includes(searchQuery)
           )
         : products;
     setFilteredProducts(filteredProductList);
+    console.log('filtered: ', filteredProductList);
   }, [category, debounceHandleSearchOnChange, products]);
 
   return (
     <>
       <Navbar />
       <div className={styles.flexWrapper}>
-        <SideNav
+        <Filter
           handleSetCategory={handleSetCategory}
           handleSearchQuery={handleSearchQuery}
-          searchQuery={searchQuery}
           categories={categories}
         />
         <div>

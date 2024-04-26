@@ -2,7 +2,6 @@ import { useState, useEffect } from 'preact/hooks';
 import useScrollLock from '../hooks/useScrollLock';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import styles from '../components/Navbar.module.css';
 
 const links = [

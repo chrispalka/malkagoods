@@ -86,11 +86,43 @@
 }
 
 .filterContainer {
+  padding: 1.5rem;
+  width: 100vw;
+}
+
+.filterContainer > div:first-child {
   display: flex;
   align-items: center;
-  padding: 1.5rem;
   cursor: pointer;
-  width: 100vw;
+}
+
+.filterContainer > div:nth-child(2) {
+  padding-top: 1rem;
+}
+
+.pillContainer {
+  display: flex;
+  min-height: 35px;
+}
+
+.categoryPill {
+  cursor: pointer;
+  background-color: rgba(217, 214, 214, 0.454);
+  border: 1px solid rgba(217, 214, 214);
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  border-radius: 9999px;
+  font-size: 12px;
+}
+
+.category {
+  margin-left: 0.3rem;
+}
+
+.pillContents {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 .searchContainer {
