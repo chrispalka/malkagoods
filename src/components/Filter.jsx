@@ -40,7 +40,6 @@ export function Filter({ handleSetCategory, handleSearchQuery, categories }) {
   const handleChange = (e) => {
     const query = e.target.value.toLowerCase();
     setSearchQuery(query);
-    handleSetCategory('');
   };
 
   return (

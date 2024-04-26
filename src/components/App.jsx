@@ -63,6 +63,34 @@ export function App() {
 
   useEffect(() => {
     console.log('category:', category);
+    console.log('searchQuery:', searchQuery);
+
+    const filteredProductList = products.filter((product) => {
+      // Filter by category if category is selected
+      const byCategory =
+        category !== '' && category !== null
+          ? product.summaries[0].websiteDisplayGroupName.toLowerCase() ===
+            category
+          : true; // If no category is selected, include all products
+
+      // Filter by search query if search query is provided
+      const bySearchQuery =
+        searchQuery !== '' && searchQuery !== null
+          ? product.summaries[0].itemName
+              .toLowerCase()
+              .includes(searchQuery.toLowerCase())
+          : true; // If no search query is provided, include all products
+
+      // Return true if both category and search query conditions are met
+      return byCategory && bySearchQuery;
+    });
+
+    setFilteredProducts(filteredProductList);
+    console.log('filtered: ', filteredProductList);
+  }, [category, searchQuery, products]);
+
+  useEffect(() => {
+    console.log('category:', category);
     const filteredProductList =
       category !== '' && category !== null
         ? products.filter(
