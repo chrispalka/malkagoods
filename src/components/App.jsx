@@ -89,23 +89,6 @@ export function App() {
     console.log('filtered: ', filteredProductList);
   }, [category, searchQuery, products]);
 
-  useEffect(() => {
-    console.log('category:', category);
-    const filteredProductList =
-      category !== '' && category !== null
-        ? products.filter(
-            (p) =>
-              p.summaries[0].websiteDisplayGroupName.toLowerCase() === category
-          )
-        : searchQuery !== '' && searchQuery !== null
-        ? products.filter((p) =>
-            p.summaries[0].itemName.toLowerCase().includes(searchQuery)
-          )
-        : products;
-    setFilteredProducts(filteredProductList);
-    console.log('filtered: ', filteredProductList);
-  }, [category, debounceHandleSearchOnChange, products]);
-
   return (
     <>
       <Navbar />

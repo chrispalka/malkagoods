@@ -32,7 +32,7 @@ export function Filter({ handleSetCategory, handleSearchQuery, categories }) {
   };
 
   const categoryOnChange = (category) => {
-    handleSearchQuery('');
+    // handleSearchQuery('');
     setCategory(category);
     toggleShowNav();
   };
