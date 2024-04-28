@@ -11,14 +11,14 @@ export function Products({ products }) {
                 <div className={styles.card}>
                   <img
                     className={styles.productImage}
-                    src={product.images[0].images[1].link}
+                    src={product.images[0].images[0].link}
                   />
                   <div className={styles.detailsContainer}>
                     <div className={styles.productTitle}>
                       {product.summaries[0].itemName}
                     </div>
                     <div className={styles.productDescription}>
-                      {product.asin}
+                      ${product.price}
                     </div>
                   </div>
                 </div>

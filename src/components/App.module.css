@@ -1,6 +1,9 @@
 .flexWrapper {
   display: flex;
   flex-direction: column;
+  padding-top: calc(17px + (20 - 17) * ((100vw - 375px) / (768 - 375)));
+  padding-right: calc(20px + (40 - 20) * ((100vw - 375px) / (768 - 375)));
+  padding-left: calc(20px + (40 - 20) * ((100vw - 375px) / (768 - 375)));
 }
 
 @media (min-width: 48rem) {

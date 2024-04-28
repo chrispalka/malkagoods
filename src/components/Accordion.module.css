@@ -1,0 +1,44 @@
+.categoryCaret {
+  color: rgb(173, 170, 170);
+  transition: all ease 0.2s;
+}
+
+.categoryCaretActive {
+  transform: rotate(90deg);
+}
+
+.subCategoryContainer span:hover {
+  color: gray;
+}
+
+.categoryContainer {
+  padding: 1rem 0;
+}
+
+.parentCategory {
+  display: flex;
+  align-items: center;
+}
+
+.parentCategory span:hover {
+  color: gray;
+}
+
+.parentCategory span {
+  margin-right: 0.3rem;
+}
+
+.subCategoryContainer {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+}
+
+.childCategory {
+  opacity: 0;
+  transition: all ease 0.7s;
+}
+
+.childCategoryActive {
+  opacity: 100%;
+}

@@ -2,10 +2,11 @@ import { useState, useEffect } from 'preact/hooks';
 import useScrollLock from '../hooks/useScrollLock';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { Accordion } from './Accordion';
 import styles from '../components/Filter.module.css';
 
 export function Filter({ handleSetCategory, handleSearchQuery, categories }) {
-  const [showNav, setShowNav] = useState(false);
+  const [showNav, setShowNav] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [category, setCategory] = useState('');
   const { lockScroll, unlockScroll } = useScrollLock();
@@ -32,7 +33,6 @@ export function Filter({ handleSetCategory, handleSearchQuery, categories }) {
   };
 
   const categoryOnChange = (category) => {
-    // handleSearchQuery('');
     setCategory(category);
     toggleShowNav();
   };
@@ -65,13 +65,16 @@ export function Filter({ handleSetCategory, handleSearchQuery, categories }) {
           </div>
         </div>
         <div className={styles.pillContainer}>
-          {category !== '' && (
+          <p>Filtered by:</p>
+          {category !== '' ? (
             <div className={styles.categoryPill} onClick={clearCategory}>
               <div className={styles.pillContents}>
                 <FontAwesomeIcon className={styles.icon} icon={faXmark} />
                 <div className={styles.category}>{category}</div>
               </div>
             </div>
+          ) : (
+            <p>All Products</p>
           )}
         </div>
       </div>
@@ -97,13 +100,10 @@ export function Filter({ handleSetCategory, handleSearchQuery, categories }) {
           <h3>Categories</h3>
           <div className={styles.categoriesContainer}>
             {categories.map((category, i) => (
-              <a
-                href={category.id}
-                key={i}
-                onClick={() => categoryOnChange(category)}
-              >
-                {category}
-              </a>
+              <Accordion
+                category={category}
+                handleSelectCategory={categoryOnChange}
+              />
             ))}
           </div>
         </div>

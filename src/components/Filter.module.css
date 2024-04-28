@@ -1,7 +1,10 @@
 .navContainer {
-  position: absolute;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
   width: 100vw;
   height: 100%;
+  left: 0;
   top: -150%;
   background-color: #f4f6f5;
   -webkit-transition: all ease 0.3s;
@@ -25,12 +28,10 @@
 }
 
 .mobile_btn {
-  position: absolute;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border: 1px solid rgba(217, 214, 214);
-  width: 100vw;
   z-index: 9998;
   top: 0;
   right: 0;
@@ -42,7 +43,7 @@
 }
 
 .linkContainer {
-  padding: 4.5rem 1rem;
+  padding: 1.5rem;
   width: 100%;
 }
 
@@ -53,18 +54,12 @@
   flex-direction: column;
 }
 
-.linkContainer a {
+.linkContainer span {
   color: #333333;
-  padding: 1rem 0;
-  text-decoration: none;
 }
 
 .linkContainer h3 {
   color: #333333;
-}
-
-.linkContainer a:hover {
-  color: gray;
 }
 
 .navIconContainer {
@@ -86,11 +81,11 @@
 }
 
 .filterContainer {
-  padding: 1.5rem;
-  width: 100vw;
+  /* width: 100vw; */
 }
 
 .filterContainer > div:first-child {
+  /* border: 1px solid red; */
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -102,7 +97,21 @@
 
 .pillContainer {
   display: flex;
+  align-items: center;
   min-height: 35px;
+}
+
+.pillContainer > p:first-child {
+  font-weight: 700;
+  color: rgb(130, 128, 128);
+}
+
+.pillContainer p {
+  font-size: 12px;
+}
+
+.pillContainer > p:nth-child(2) {
+  margin-left: 0.2rem;
 }
 
 .categoryPill {
@@ -110,9 +119,10 @@
   background-color: rgba(217, 214, 214, 0.454);
   border: 1px solid rgba(217, 214, 214);
   padding-left: 0.3rem;
-  padding-right: 0.3rem;
+  padding-right: 0.5rem;
   border-radius: 9999px;
   font-size: 12px;
+  margin-left: 0.2rem;
 }
 
 .category {

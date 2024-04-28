@@ -35,8 +35,8 @@ export function App() {
 
   /** SET CATEGORY LIST */
   useEffect(() => {
-    console.log(`${products.length} products fetched from S3`);
-    const categoryList = [
+    let categoryList = [];
+    const categoryHeaders = [
       ...new Set(
         products.map(
           (p) =>
@@ -47,6 +47,24 @@ export function App() {
         )
       ),
     ].sort();
+    categoryHeaders.forEach((category) => {
+      categoryList.push({
+        [category]: [
+          ...new Set(
+            products
+              .filter(
+                (product) =>
+                  product.summaries[0].websiteDisplayGroupName === category
+              )
+              .map(
+                (product) =>
+                  product.summaries[0].browseClassification?.displayName
+              )
+              .sort()
+          ),
+        ],
+      });
+    });
     setCategories(categoryList);
   }, [products]);
 
@@ -62,31 +80,27 @@ export function App() {
   /** FILTERING */
 
   useEffect(() => {
-    console.log('category:', category);
-    console.log('searchQuery:', searchQuery);
-
     const filteredProductList = products.filter((product) => {
       // Filter by category if category is selected
       const byCategory =
         category !== '' && category !== null
           ? product.summaries[0].websiteDisplayGroupName.toLowerCase() ===
-            category
-          : true; // If no category is selected, include all products
+              category ||
+            product.summaries[0].browseClassification?.displayName.toLowerCase() ===
+              category
+          : true;
 
-      // Filter by search query if search query is provided
       const bySearchQuery =
         searchQuery !== '' && searchQuery !== null
           ? product.summaries[0].itemName
               .toLowerCase()
               .includes(searchQuery.toLowerCase())
-          : true; // If no search query is provided, include all products
+          : true;
 
-      // Return true if both category and search query conditions are met
       return byCategory && bySearchQuery;
     });
 
     setFilteredProducts(filteredProductList);
-    console.log('filtered: ', filteredProductList);
   }, [category, searchQuery, products]);
 
   return (
