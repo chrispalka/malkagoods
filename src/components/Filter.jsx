@@ -6,7 +6,7 @@ import { Accordion } from './Accordion';
 import styles from '../components/Filter.module.css';
 
 export function Filter({ handleSetCategory, handleSearchQuery, categories }) {
-  const [showNav, setShowNav] = useState(true);
+  const [showNav, setShowNav] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [category, setCategory] = useState('');
   const { lockScroll, unlockScroll } = useScrollLock();

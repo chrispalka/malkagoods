@@ -6,12 +6,17 @@ import styles from './Accordion.module.css';
 export function Accordion({ category, handleSelectCategory }) {
   const [isActive, setIsActive] = useState(false);
 
+  const handleCategoryOnChange = (category) => {
+    setIsActive(false);
+    handleSelectCategory(category);
+  };
+
   return (
     <div className={styles.categoryContainer}>
       {Object.keys(category).map((key, j) => (
         <>
           <div className={styles.parentCategory}>
-            <span onClick={() => handleSelectCategory(key)}>{key}</span>
+            <span onClick={() => handleCategoryOnChange(key)}>{key}</span>
             <FontAwesomeIcon
               className={
                 isActive
@@ -34,7 +39,10 @@ export function Accordion({ category, handleSelectCategory }) {
               <div className={styles.subCategoryContainer}>
                 {Array.isArray(category[key]) &&
                   category[key].map((subcat, k) => (
-                    <span key={k} onClick={() => handleSelectCategory(subcat)}>
+                    <span
+                      key={k}
+                      onClick={() => handleCategoryOnChange(subcat)}
+                    >
                       {subcat}
                     </span>
                   ))}
