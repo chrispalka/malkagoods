@@ -24,6 +24,12 @@
   flex-wrap: wrap;
   /* gap: 10px; */
 }
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 2rem;
+}
 
 .item {
   flex: 0 1 50%;
