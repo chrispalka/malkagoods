@@ -4,6 +4,7 @@ import { Product } from './Product';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import Modal from 'react-modal';
+import { width } from '@fortawesome/free-brands-svg-icons/fa42Group';
 
 export function Products({ products }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,6 +19,8 @@ export function Products({ products }) {
       transform: 'translate(-50%, -50%)',
       boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)',
       borderRadius: '5px',
+      height: 'auto',
+      maxHeight: '80%',
     },
   };
 

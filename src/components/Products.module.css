@@ -28,7 +28,8 @@
   position: absolute;
   top: 0;
   right: 0;
-  padding-right: 2rem;
+  padding: 2rem;
+  z-index: 9999;
 }
 
 .item {
