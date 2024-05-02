@@ -1,14 +1,15 @@
 import { useState } from 'preact/hooks';
 import styles from './Products.module.css';
 import { Product } from './Product';
+import useScrollLock from '../hooks/useScrollLock';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import Modal from 'react-modal';
-import { width } from '@fortawesome/free-brands-svg-icons/fa42Group';
 
 export function Products({ products }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProductDetails, setSelectedProductDetails] = useState({});
+  const { lockScroll, unlockScroll } = useScrollLock();
 
   const customStyles = {
     content: {
@@ -27,13 +28,15 @@ export function Products({ products }) {
   Modal.setAppElement('#app');
 
   const handleToggleModal = (product) => {
-    setSelectedProductDetails(product);
+    if (!isModalOpen) {
+      setSelectedProductDetails(product);
+      lockScroll();
+    } else {
+      unlockScroll();
+    }
     setIsModalOpen(!isModalOpen);
   };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
   return (
     <section id='products'>
       <div className={styles.flexContainer}>
@@ -62,7 +65,7 @@ export function Products({ products }) {
                       {product.summaries[0].itemName}
                     </div>
                     <div className={styles.productDescription}>
-                      ${product.price}
+                      ${parseFloat(product.price).toFixed(2)}
                     </div>
                   </div>
                 </div>
@@ -77,7 +80,7 @@ export function Products({ products }) {
             className={styles.icon}
             icon={faXmark}
             size='lg'
-            onClick={() => closeModal()}
+            onClick={() => handleToggleModal()}
           />
         </div>
         <Product productDetails={selectedProductDetails} />

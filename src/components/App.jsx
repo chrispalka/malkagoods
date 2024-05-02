@@ -14,6 +14,7 @@ import styles from './App.module.css';
 export function App() {
   /** JSON DATA FROM S3 */
   const [products, setProducts] = useState([]);
+  const [featuredProducts, setFeaturedProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState('');
@@ -65,6 +66,12 @@ export function App() {
         ],
       });
     });
+    const randomSet = [];
+    for (let i = 0; i < 5; i++) {
+      const randomIndex = Math.floor(Math.random() * products.length);
+      randomSet.push(products[randomIndex].images[0].images[0].link);
+    }
+    setFeaturedProducts(randomSet);
     setCategories(categoryList);
   }, [products]);
 
@@ -114,7 +121,7 @@ export function App() {
           categories={categories}
         />
         <div>
-          <Featured />
+          <Featured images={featuredProducts} />
           <Products products={filteredProducts} />
         </div>
       </div>

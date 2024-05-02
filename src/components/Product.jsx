@@ -11,6 +11,9 @@ export function Product({ productDetails }) {
           <div className={styles.title}>{productDetails.title}</div>
           <div>{productDetails.description}</div>
         </div>
+        <div className={styles.priceContainer}>
+          ${parseFloat(productDetails.price).toFixed(2)}
+        </div>
       </div>
     </div>
   );

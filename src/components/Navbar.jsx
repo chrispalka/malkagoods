@@ -35,11 +35,6 @@ export function Navbar() {
 
   const toggleShowNavDropdown = () => {
     setShowNav(!showNav);
-    // if (showNav) {
-    //   unlockScroll();
-    // } else {
-    //   lockScroll();
-    // }
   };
   return (
     <div

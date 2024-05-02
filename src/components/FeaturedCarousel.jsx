@@ -4,22 +4,22 @@ import Hero1 from '../assets/hero.jpeg';
 import Hero2 from '../assets/hero.jpg';
 import styles from './FeaturedCarousel.module.css';
 
-export function FeaturedCarousel() {
+export function FeaturedCarousel({ images }) {
   return (
     <div className={styles.carouselContainer}>
       <Carousel
         autoPlay
         showThumbs={false}
         showStatus={false}
+        showIndicators={false}
         showArrows={false}
         infiniteLoop={true}
       >
-        <div>
-          <img src={Hero1} />
-        </div>
-        <div>
-          <img src={Hero2} />
-        </div>
+        {images.map((image) => (
+          <div className={styles.imageContainer}>
+            <img alt='' src={image} className={styles.productImage} />
+          </div>
+        ))}
       </Carousel>
     </div>
   );

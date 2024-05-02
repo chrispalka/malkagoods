@@ -1,10 +1,30 @@
 .carouselContainer {
   width: 100%;
+  /* border: 1px solid red; */
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+.productImage {
+  width: 250px;
+  height: 250px;
+  border-radius: 5px 5px 0 0;
+  object-fit: cover;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
 }
 
 @media (min-width: 80.0625rem) {
   .carouselContainer {
-    max-width: 1320px;
+    max-width: 800px;
     margin: auto;
+  }
+  .productImage {
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
   }
 }
