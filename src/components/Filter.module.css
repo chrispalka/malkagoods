@@ -228,9 +228,18 @@
   }
 
   .navContainer {
+    position: relative;
+    width: 100%;
+    top: 0;
+  }
+
+  .filterWrapper {
     width: 25%;
-    height: 100vh;
+    height: 100%;
     left: 0;
-    background-color: #272932;
+    top: 70px;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
   }
 }

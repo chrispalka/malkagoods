@@ -69,7 +69,7 @@ export function App() {
     const randomSet = [];
     for (let i = 0; i < 5; i++) {
       const randomIndex = Math.floor(Math.random() * products.length);
-      randomSet.push(products[randomIndex].images[0].images[0].link);
+      randomSet.push(products[randomIndex]?.images[0].images[0].link);
     }
     setFeaturedProducts(randomSet);
     setCategories(categoryList);
@@ -120,7 +120,7 @@ export function App() {
           handleSearchQuery={handleSearchQuery}
           categories={categories}
         />
-        <div>
+        <div className={styles.sectionWrapper}>
           <Featured images={featuredProducts} />
           <Products products={filteredProducts} />
         </div>

@@ -43,7 +43,7 @@ export function Filter({ handleSetCategory, handleSearchQuery, categories }) {
   };
 
   return (
-    <>
+    <div className={styles.filterWrapper}>
       <div className={styles.filterContainer} id='nav-click'>
         <div>
           <div className={styles.filterButton}>
@@ -108,6 +108,6 @@ export function Filter({ handleSetCategory, handleSearchQuery, categories }) {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

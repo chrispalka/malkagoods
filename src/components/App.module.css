@@ -16,4 +16,7 @@
   .flexWrapper {
     flex-direction: row;
   }
+  .sectionWrapper {
+    margin-left: 25%;
+  }
 }
