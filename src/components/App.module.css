@@ -5,18 +5,20 @@
   padding-right: calc(20px + (40 - 20) * ((100vw - 375px) / (768 - 375)));
   padding-left: calc(20px + (40 - 20) * ((100vw - 375px) / (768 - 375)));
 }
+.main {
+  border: 2px solid purple;
+}
 
 @media (min-width: 48rem) {
 }
 
-@media (min-width: 62rem) {
+@media (min-width: 37.5rem) and (max-width: 80.0625rem) {
 }
 
 @media (min-width: 80.0625rem) {
   .flexWrapper {
+    display: flex;
+    height: 100%;
     flex-direction: row;
-  }
-  .sectionWrapper {
-    margin-left: 25%;
   }
 }

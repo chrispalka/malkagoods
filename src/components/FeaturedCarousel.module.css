@@ -17,6 +17,12 @@
   justify-content: center;
 }
 
+/** LAPTOP DESKTOP **/
+
+@media (min-width: 37.5rem) and (max-width: 80.0625rem) {
+}
+
+/** LARGE SCREENS **/
 @media (min-width: 80.0625rem) {
   .carouselContainer {
     max-width: 800px;

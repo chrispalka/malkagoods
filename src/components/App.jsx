@@ -120,7 +120,7 @@ export function App() {
           handleSearchQuery={handleSearchQuery}
           categories={categories}
         />
-        <div className={styles.sectionWrapper}>
+        <div className={styles.main}>
           <Featured images={featuredProducts} />
           <Products products={filteredProducts} />
         </div>
