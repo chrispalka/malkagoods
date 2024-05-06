@@ -11,6 +11,7 @@
   -moz-transition: all ease 0.3s;
   transition: all ease 0.23;
   z-index: 9999;
+  overflow: scroll;
 }
 
 .filterWrapper {
