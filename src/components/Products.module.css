@@ -22,8 +22,6 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 1000px;
-  overflow: scroll;
 }
 .close {
   position: absolute;
@@ -132,7 +130,6 @@
 
   .card {
     height: 500px;
-    width: 259px;
   }
 
   .productImage {

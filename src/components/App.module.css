@@ -6,7 +6,10 @@
   padding-left: calc(20px + (40 - 20) * ((100vw - 375px) / (768 - 375)));
 }
 .main {
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
+  overflow: scroll;
+  height: 100vh;
+  width: 100%;
 }
 
 @media (min-width: 48rem) {

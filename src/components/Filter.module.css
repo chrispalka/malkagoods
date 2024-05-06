@@ -14,7 +14,7 @@
 }
 
 .filterWrapper {
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
 }
 
 .filterButton {
@@ -231,7 +231,7 @@
   }
 
   .filterWrapper {
-    flex: 1 0 10%;
+    width: 16.3%;
   }
   .filterButton {
     display: none;
