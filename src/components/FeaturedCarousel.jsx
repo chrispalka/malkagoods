@@ -1,7 +1,5 @@
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
-import Hero1 from '../assets/hero.jpeg';
-import Hero2 from '../assets/hero.jpg';
 import styles from './FeaturedCarousel.module.css';
 
 export function FeaturedCarousel({ images }) {
