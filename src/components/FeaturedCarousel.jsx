@@ -12,6 +12,7 @@ export function FeaturedCarousel({ images }) {
         showIndicators={false}
         showArrows={false}
         infiniteLoop={true}
+        swipeable={false}
       >
         {images.map((image) => (
           <div className={styles.imageContainer}>
