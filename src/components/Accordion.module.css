@@ -7,7 +7,12 @@
   transform: rotate(90deg);
 }
 
+.categoryCaret:hover {
+  cursor: pointer;
+}
+
 .subCategoryContainer span:hover {
+  cursor: pointer;
   color: gray;
 }
 
@@ -22,6 +27,7 @@
 
 .parentCategory span:hover {
   color: gray;
+  cursor: pointer;
 }
 
 .parentCategory span {
