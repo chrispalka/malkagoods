@@ -100,6 +100,14 @@
   cursor: pointer;
 }
 
+/** TABLET **/
+
+@media (min-width: 48rem) {
+  .card {
+    height: 500px;
+  }
+}
+
 /* LAPTOP DESKTOP */
 
 @media (min-width: 37.5rem) and (max-width: 80.0625rem) {
@@ -107,6 +115,9 @@
     flex: 1 1 calc(33.33% - 10px); /* 3 items per row on smaller screens */
     height: 500px;
     width: 400px;
+  }
+  .card {
+    height: 500px;
   }
 
   .dropdownContainer {

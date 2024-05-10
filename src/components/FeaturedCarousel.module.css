@@ -18,9 +18,24 @@
   max-height: calc(100vh - 150px) !important;
 }
 
+/** TABLET **/
+
+@media (min-width: 48rem) {
+  .productImage {
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+  }
+}
+
 /** LAPTOP DESKTOP **/
 
 @media (min-width: 37.5rem) and (max-width: 80.0625rem) {
+  .productImage {
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+  }
 }
 
 /** LARGE SCREENS **/
@@ -32,6 +47,6 @@
   .productImage {
     width: 400px;
     height: 400px;
-    object-fit: cover;
+    object-fit: contain;
   }
 }
