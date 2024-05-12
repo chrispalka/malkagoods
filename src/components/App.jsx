@@ -108,7 +108,7 @@ export function App() {
     });
 
     setFilteredProducts(filteredProductList);
-    console.log(filteredProductList);
+    // console.log(filteredProductList);
   }, [category, searchQuery, products]);
 
   return (

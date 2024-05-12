@@ -19,9 +19,12 @@
 
 .flexContainer {
   overflow-y: auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  margin: 0 auto;
+  display: grid;
+  /* grid-auto-columns: 1fr; */
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 .close {
   position: absolute;
@@ -32,7 +35,7 @@
 }
 
 .item {
-  flex: 0 1 50%;
+  /* flex: 0 1 50%; */
   height: 300px;
   width: 200px;
   overflow: hidden;
@@ -42,6 +45,7 @@
 
 .card {
   /* Add shadows to create the "card" effect */
+  height: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: #fff;
   transition: 0.3s;
@@ -111,10 +115,12 @@
 /* LAPTOP DESKTOP */
 
 @media (min-width: 37.5rem) and (max-width: 80.0625rem) {
+  .flexContainer {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
   .item {
-    flex: 1 1 calc(33.33% - 10px); /* 3 items per row on smaller screens */
     height: 500px;
-    width: 400px;
+    width: 100%;
   }
   .card {
     height: 500px;
@@ -132,14 +138,12 @@
 
 @media (min-width: 80.0625rem) {
   .flexContainer {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 2000px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   }
+
   .item {
-    flex: 1 1 calc(25% - 10px); /* 4 items per row on larger screens */
     height: 500px;
-    width: 400px;
+    width: 100%;
   }
 
   .card {

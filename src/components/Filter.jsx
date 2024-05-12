@@ -19,8 +19,12 @@ export function Filter({ handleSetCategory, handleSearchQuery, categories }) {
     handleSetCategory(category.toLowerCase());
   }, [category]);
 
-  const toggleShowNav = () => {
-    setShowNav(!showNav);
+  const toggleShowNav = (fromCat = false) => {
+    if (fromCat) {
+      setShowNav(false);
+    } else {
+      setShowNav(!showNav);
+    }
     if (showNav) {
       unlockScroll();
     } else {
@@ -34,7 +38,7 @@ export function Filter({ handleSetCategory, handleSearchQuery, categories }) {
 
   const categoryOnChange = (category) => {
     setCategory(category);
-    toggleShowNav();
+    toggleShowNav(true);
   };
 
   const handleChange = (e) => {
