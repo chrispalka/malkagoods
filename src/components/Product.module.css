@@ -31,9 +31,15 @@
 }
 
 @media (min-width: 48rem) {
+  .card {
+    width: 700px;
+  }
 }
 
 @media (min-width: 37.5rem) and (max-width: 80.0625rem) {
+  .card {
+    width: 700px;
+  }
 }
 
 @media (min-width: 80.0625rem) {
