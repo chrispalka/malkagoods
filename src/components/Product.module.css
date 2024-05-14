@@ -40,6 +40,9 @@
   .card {
     width: 700px;
   }
+  .flexContainer {
+    flex-direction: row;
+  }
 }
 
 @media (min-width: 80.0625rem) {
