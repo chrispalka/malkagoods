@@ -39,7 +39,7 @@ export function Products({ products }) {
 
   return (
     <section id='products'>
-      <div className={styles.flexContainer}>
+      <div className={styles.gridContainer}>
         {products.length > 0 && (
           <>
             {products.map((product, index) => (

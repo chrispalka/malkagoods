@@ -4,7 +4,10 @@
   padding-top: calc(17px + (20 - 17) * ((100vw - 375px) / (768 - 375)));
   padding-right: calc(20px + (40 - 20) * ((100vw - 375px) / (768 - 375)));
   padding-left: calc(20px + (40 - 20) * ((100vw - 375px) / (768 - 375)));
+  height: 100vh; /* Ensure the flexWrapper takes the full viewport height */
+  overflow: hidden; /* Prevents scrolling within flexWrapper */
 }
+
 .main {
   /* border: 1px solid purple; */
   box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
@@ -12,14 +15,17 @@
   border-radius: 0 0 5px 5px;
 
   overflow: auto;
-  height: 100vh;
+  flex: 1; /* Allows main to grow and take available space */
   width: 100%;
+  padding-bottom: 2rem; /* Add padding to ensure content isn't cut off */
 }
 
 @media (min-width: 48rem) {
+  /* Any specific styles for tablets */
 }
 
 @media (min-width: 37.5rem) and (max-width: 80.0625rem) {
+  /* Any specific styles for laptops and desktops */
 }
 
 @media (min-width: 80.0625rem) {

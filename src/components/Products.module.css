@@ -17,7 +17,7 @@
   font-size: 2em;
 }
 
-.flexContainer {
+.gridContainer {
   overflow-y: auto;
   margin: 0 auto;
   display: grid;
@@ -36,8 +36,8 @@
 
 .item {
   /* flex: 0 1 50%; */
-  height: 300px;
-  width: 200px;
+  height: auto;
+  width: 100%;
   overflow: hidden;
   padding: 5px;
   border-radius: 5px;
@@ -66,7 +66,7 @@
   margin-bottom: 0.5rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
-/*   max-width: 200px; */
+  /*   max-width: 200px; */
   -webkit-box-orient: vertical;
   overflow: hidden;
   /* padding: 0.5rem; */
@@ -108,22 +108,22 @@
 
 @media (min-width: 48rem) {
   .card {
-    height: 500px;
+    height: 100%;
   }
 }
 
 /* LAPTOP DESKTOP */
 
 @media (min-width: 37.5rem) and (max-width: 80.0625rem) {
-  .flexContainer {
+  .gridContainer {
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   }
   .item {
-    height: 500px;
+    height: auto;
     width: 100%;
   }
   .card {
-    height: 500px;
+    height: 100%;
   }
 
   .dropdownContainer {
@@ -137,17 +137,17 @@
 /* LARGE SCREENS */
 
 @media (min-width: 80.0625rem) {
-  .flexContainer {
+  .gridContainer {
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   }
 
   .item {
-    height: 500px;
+    height: auto;
     width: 100%;
   }
 
   .card {
-    height: 500px;
+    height: 100%;
   }
 
   .productImage {

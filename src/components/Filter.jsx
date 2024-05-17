@@ -55,7 +55,7 @@ export function Filter({ handleSetCategory, handleSearchQuery, categories }) {
               className={styles.icon}
               icon={faFilter}
               size='lg'
-              onClick={toggleShowNav}
+              onClick={() => toggleShowNav()}
             />
           </div>
           <div className={styles.searchContainer}>
@@ -97,7 +97,7 @@ export function Filter({ handleSetCategory, handleSearchQuery, categories }) {
             className={styles.icon}
             icon={faXmark}
             size='lg'
-            onClick={toggleShowNav}
+            onClick={() => toggleShowNav()}
           />
         </div>
         <div className={styles.linkContainer}>
