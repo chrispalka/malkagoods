@@ -94,7 +94,7 @@ export function Navbar() {
               </a>
             ))}
             <div className={styles.contactContainer}>
-              <a href='mailto:malkagood@gmail.com'>
+              <a href='mailto:matthew@malkagoods.com'>
                 <FontAwesomeIcon icon={faEnvelope} size='lg' />
               </a>
             </div>
