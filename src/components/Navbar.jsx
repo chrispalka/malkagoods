@@ -26,7 +26,9 @@ export function Navbar() {
   return (
     <div className={styles.navbar}>
       <div className={styles.navbarContent}>
-        <div className={styles.logoContainer}>Malka Goods</div>
+        <div className={styles.logoContainer}>
+          <a href='https://malkagoods.com'>Malka Goods</a>
+        </div>
         <div className={styles.linkContainer}>
           <div className={styles.contactContainer}>
             <a href='mailto:matthew@malkagoods.com'>

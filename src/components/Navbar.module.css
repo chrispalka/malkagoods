@@ -61,7 +61,7 @@
   height: 250px;
 }
 
-.logoContainer {
+.logoContainer a {
   cursor: pointer;
   font-family: 'Lobster';
   color: #333333;
@@ -145,7 +145,7 @@
     display: none;
   }
 
-  .logoContainer,
+  .logoContainer a,
   .contactContainer,
   .cartContainer {
     font-size: 1.2rem;
@@ -165,7 +165,7 @@
     height: 70px;
   }
 
-  .logoContainer,
+  .logoContainer a,
   .contactContainer,
   .cartContainer {
     font-size: 1.4rem;
@@ -199,7 +199,7 @@
   .mobile_btn {
     display: none;
   }
-  .logoContainer,
+  .logoContainer a,
   .contactContainer,
   .cartContainer {
     font-size: 1.6rem;

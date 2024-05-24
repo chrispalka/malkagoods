@@ -1,13 +1,11 @@
 .carouselContainer {
   width: 100%;
-  /* border: 1px solid red; */
   height: auto;
   display: flex;
   align-items: center;
 }
 .productImage {
-  /* width: 100%;
-  height: 100%; */
+  height: 450px;
   border-radius: 5px 5px 0 0;
   object-fit: contain;
 }
