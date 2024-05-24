@@ -4,20 +4,17 @@
   padding-top: calc(17px + (20 - 17) * ((100vw - 375px) / (768 - 375)));
   padding-right: calc(20px + (40 - 20) * ((100vw - 375px) / (768 - 375)));
   padding-left: calc(20px + (40 - 20) * ((100vw - 375px) / (768 - 375)));
-  height: 100vh; /* Ensure the flexWrapper takes the full viewport height */
-  overflow: hidden; /* Prevents scrolling within flexWrapper */
+  height: calc(100vh - 70px);
 }
 
 .main {
-  /* border: 1px solid purple; */
+  height: 100%;
   box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: #fff;
   border-radius: 0 0 5px 5px;
-
   overflow: auto;
-  flex: 1; /* Allows main to grow and take available space */
+  flex: 1;
   width: 100%;
-  padding-bottom: 2rem; /* Add padding to ensure content isn't cut off */
 }
 
 @media (min-width: 48rem) {
@@ -31,7 +28,6 @@
 @media (min-width: 80.0625rem) {
   .flexWrapper {
     display: flex;
-    height: 100%;
     flex-direction: row;
   }
 

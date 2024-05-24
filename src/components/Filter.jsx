@@ -48,7 +48,7 @@ export function Filter({ handleSetCategory, handleSearchQuery, categories }) {
 
   return (
     <div className={styles.filterWrapper}>
-      <div className={styles.filterContainer} id='nav-click'>
+      <div className={styles.filterContainer}>
         <div>
           <div className={styles.filterButton}>
             <FontAwesomeIcon
