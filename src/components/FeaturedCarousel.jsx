@@ -6,6 +6,7 @@ export function FeaturedCarousel({ images }) {
   return (
     <div className={styles.carouselContainer}>
       <Carousel
+        key={images.length}
         autoPlay
         showThumbs={false}
         showStatus={false}
