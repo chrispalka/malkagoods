@@ -1,7 +1,7 @@
 .carouselContainer {
   width: 100%;
   height: auto;
-  display: flex;
+  display: none;
   align-items: center;
 }
 .productImage {
@@ -24,11 +24,18 @@
     height: 400px;
     object-fit: contain;
   }
+  .carouselContainer {
+    display: flex;
+  }
 }
 
 /** LAPTOP DESKTOP **/
 
 @media (min-width: 37.5rem) and (max-width: 80.0625rem) {
+  .carouselContainer {
+    display: flex;
+  }
+
   .productImage {
     width: 400px;
     height: 400px;
@@ -39,6 +46,7 @@
 /** LARGE SCREENS **/
 @media (min-width: 80.0625rem) {
   .carouselContainer {
+    display: flex;
     max-width: 800px;
     margin: auto;
   }
