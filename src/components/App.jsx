@@ -108,21 +108,21 @@ export function App() {
     });
 
     setFilteredProducts(filteredProductList);
-    // console.log(filteredProductList);
   }, [category, searchQuery, products]);
 
   return (
     <>
-      <Navbar />
-      <div className={styles.flexWrapper}>
-        <Filter
-          handleSetCategory={handleSetCategory}
-          handleSearchQuery={handleSearchQuery}
-          categories={categories}
-        />
-        <div className={styles.main}>
-          <Featured images={featuredProducts} />
-          <Products products={filteredProducts} />
+      <Navbar handleSearchQuery={handleSearchQuery} />
+      <div className={styles.container}>
+        <div className={styles.flexWrapper}>
+          <Filter
+            handleSetCategory={handleSetCategory}
+            categories={categories}
+          />
+          <div className={styles.main}>
+            <Featured images={featuredProducts} />
+            <Products products={filteredProducts} />
+          </div>
         </div>
       </div>
     </>

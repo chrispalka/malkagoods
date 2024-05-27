@@ -1,3 +1,15 @@
+:root {
+  --primary-color: #007b55; /* Teal Blue */
+  --secondary-color: #002855; /* Dark Blue */
+  --accent-color: #e9c46a; /* Mustard Yellow */
+  --background-color: #f4f4f4; /* Light Gray */
+  --text-color: #333333; /* Dark Gray */
+  --secondary-text-color: #6c757d; /* Medium Gray */
+  --button-background: #2a9d8f; /* Teal Blue */
+  --button-text: #ffffff; /* White */
+  --border-color: #dddddd; /* Light Gray */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +25,7 @@
 }
 
 body {
-  background-color: #f4f6f5;
+  background-color: var(--background-color);
   overflow: hidden;
 }
 

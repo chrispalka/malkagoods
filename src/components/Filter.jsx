@@ -5,15 +5,10 @@ import { faFilter, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Accordion } from './Accordion';
 import styles from '../components/Filter.module.css';
 
-export function Filter({ handleSetCategory, handleSearchQuery, categories }) {
+export function Filter({ handleSetCategory, categories }) {
   const [showNav, setShowNav] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
   const [category, setCategory] = useState('');
   const { lockScroll, unlockScroll } = useScrollLock();
-
-  useEffect(() => {
-    handleSearchQuery(searchQuery);
-  }, [searchQuery]);
 
   useEffect(() => {
     handleSetCategory(category.toLowerCase());
@@ -41,32 +36,16 @@ export function Filter({ handleSetCategory, handleSearchQuery, categories }) {
     toggleShowNav(true);
   };
 
-  const handleChange = (e) => {
-    const query = e.target.value.toLowerCase();
-    setSearchQuery(query);
-  };
-
   return (
     <div className={styles.filterWrapper}>
       <div className={styles.filterContainer}>
-        <div>
-          <div className={styles.filterButton}>
-            <FontAwesomeIcon
-              className={styles.icon}
-              icon={faFilter}
-              size='lg'
-              onClick={() => toggleShowNav()}
-            />
-          </div>
-          <div className={styles.searchContainer}>
-            <input
-              id='search'
-              icon='search'
-              placeholder='Search'
-              value={searchQuery}
-              onChange={handleChange}
-            />
-          </div>
+        <div className={styles.filterButton}>
+          <FontAwesomeIcon
+            className={styles.icon}
+            icon={faFilter}
+            size='lg'
+            onClick={() => toggleShowNav()}
+          />
         </div>
         <div className={styles.pillContainer}>
           <p>Filtered by:</p>

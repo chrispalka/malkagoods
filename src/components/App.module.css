@@ -1,10 +1,8 @@
 .flexWrapper {
   display: flex;
   flex-direction: column;
-  padding-top: calc(17px + (20 - 17) * ((100vw - 375px) / (768 - 375)));
-  padding-right: calc(20px + (40 - 20) * ((100vw - 375px) / (768 - 375)));
-  padding-left: calc(20px + (40 - 20) * ((100vw - 375px) / (768 - 375)));
-  height: calc(100vh - 70px);
+  height: calc(100vh - 125px);
+  padding-bottom: calc(17px + (20 - 17) * ((100vw - 375px) / (768 - 375)));
 }
 
 .main {
@@ -15,6 +13,11 @@
   overflow: auto;
   flex: 1;
   width: 100%;
+}
+
+.container {
+  max-width: 1360px;
+  margin: 0 auto;
 }
 
 @media (min-width: 48rem) {
@@ -28,6 +31,7 @@
 @media (min-width: 80.0625rem) {
   .flexWrapper {
     display: flex;
+    padding-top: calc(17px + (20 - 17) * ((100vw - 375px) / (768 - 375)));
     flex-direction: row;
   }
 

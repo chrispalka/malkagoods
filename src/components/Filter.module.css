@@ -141,17 +141,6 @@
   justify-content: space-between;
 }
 
-.searchContainer {
-  width: 100%;
-}
-
-.searchContainer input {
-  border: 1px solid rgba(217, 214, 214);
-  border-radius: 5px;
-  padding: 1rem;
-  width: 100%;
-}
-
 .nameContainer {
   position: fixed;
   top: 0;
