@@ -8,22 +8,22 @@ export function Navbar({ handleSearchQuery }) {
     <div className={styles.navbar}>
       <div className={styles.container}>
         <div className={styles.navbarContent}>
-          <div className={styles.logoLinksContainer}>
-            <div className={styles.logoContainer}>
-              <a href='https://malkagoods.com'>Malka Goods</a>
+          <div className={styles.logoContainer}>
+            <a href='https://malkagoods.com'>Malka Goods</a>
+          </div>
+          <div className={styles.linkContainer}>
+            <div className={styles.contactContainer}>
+              <a href='mailto:matthew@malkagoods.com'>
+                <FontAwesomeIcon icon={faEnvelope} />
+              </a>
             </div>
-            <div className={styles.linkContainer}>
-              <div className={styles.contactContainer}>
-                <a href='mailto:matthew@malkagoods.com'>
-                  <FontAwesomeIcon icon={faEnvelope} />
-                </a>
-              </div>
-              <div className={styles.cartContainer}>
-                <FontAwesomeIcon icon={faShoppingCart} />
-              </div>
+            <div className={styles.cartContainer}>
+              <FontAwesomeIcon icon={faShoppingCart} />
             </div>
           </div>
-          <Search handleSearchQuery={handleSearchQuery} />
+          <div className={styles.searchContainer}>
+            <Search handleSearchQuery={handleSearchQuery} />
+          </div>
         </div>
       </div>
     </div>

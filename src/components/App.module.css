@@ -32,6 +32,7 @@
   .flexWrapper {
     display: flex;
     padding-top: calc(17px + (20 - 17) * ((100vw - 375px) / (768 - 375)));
+    padding-bottom: 0;
     flex-direction: row;
   }
 

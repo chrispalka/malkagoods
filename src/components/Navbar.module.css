@@ -19,9 +19,14 @@
 
 .navbarContent {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
   height: 100%;
   align-items: center;
+}
+
+.navbarContent .searchContainer {
+  flex-basis: 100%;
 }
 
 .logoLinksContainer {
@@ -149,8 +154,6 @@
   }
   .navbar {
     padding-top: calc(17px + (20 - 17) * ((100vw - 375px) / (768 - 375)));
-    padding-right: calc(20px + (40 - 20) * ((100vw - 375px) / (768 - 375)));
-    padding-left: calc(20px + (40 - 20) * ((100vw - 375px) / (768 - 375)));
   }
   .mobile_btn {
     display: none;
@@ -184,8 +187,6 @@
 
   .navbar {
     padding-top: calc(17px + (20 - 17) * ((100vw - 375px) / (768 - 375)));
-    padding-right: calc(20px + (40 - 20) * ((100vw - 375px) / (768 - 375)));
-    padding-left: calc(20px + (40 - 20) * ((100vw - 375px) / (768 - 375)));
   }
 }
 
@@ -194,12 +195,22 @@
 @media (min-width: 80.0625rem) {
   .navbarContent {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     width: 100%;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
   }
+
+  .navbarContent .linkContainer {
+    order: 2;
+  }
+
+  .navbarContent .searchContainer {
+    flex-basis: 50%;
+  }
+
   .menu {
     display: flex;
     justify-content: flex-end;
@@ -218,8 +229,5 @@
 
   .navbar {
     top: 0;
-    padding-top: calc(17px + (20 - 17) * ((100vw - 375px) / (768 - 375)));
-    padding-right: calc(20px + (40 - 20) * ((100vw - 375px) / (768 - 375)));
-    padding-left: calc(20px + (40 - 20) * ((100vw - 375px) / (768 - 375)));
   }
 }

@@ -92,7 +92,7 @@
 
 .filterContainer > div:first-child {
   /* border: 1px solid red; */
-  display: flex;
+  /* display: flex; */
   align-items: center;
   cursor: pointer;
 }
@@ -223,6 +223,7 @@
   }
 
   .filterWrapper {
+    padding: 1.7em;
     width: 16.3%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -237,6 +238,7 @@
   }
 
   .linkContainer {
+    padding: 0rem;
     height: 100%;
   }
 }

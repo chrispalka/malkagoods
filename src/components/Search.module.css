@@ -1,5 +1,6 @@
 .searchContainer {
   width: 100%;
+  padding-top: 1rem;
 }
 
 .searchContainer input {
@@ -7,4 +8,23 @@
   border-radius: 50px;
   padding: 1rem;
   width: 100%;
+  height: 50px;
+}
+
+/* TABLET */
+
+@media (min-width: 48rem) and (max-width: 64rem) {
+}
+
+/* LAPTOP DESKTOP */
+
+@media (min-width: 37.5rem) and (max-width: 80.0625rem) {
+}
+
+/* LARGE SCREENS */
+
+@media (min-width: 80.0625rem) {
+  .searchContainer {
+    padding-top: 0rem;
+  }
 }
