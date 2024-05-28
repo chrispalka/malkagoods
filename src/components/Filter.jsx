@@ -5,7 +5,12 @@ import { faFilter, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Accordion } from './Accordion';
 import styles from '../components/Filter.module.css';
 
-export function Filter({ handleSetCategory, categories }) {
+export function Filter({
+  handleSetCategory,
+  categories,
+  filteredTotal,
+  total,
+}) {
   const [showNav, setShowNav] = useState(false);
   const [category, setCategory] = useState('');
   const { lockScroll, unlockScroll } = useScrollLock();
@@ -48,17 +53,24 @@ export function Filter({ handleSetCategory, categories }) {
           />
         </div>
         <div className={styles.pillContainer}>
-          <p>Filtered by:</p>
-          {category !== '' ? (
-            <div className={styles.categoryPill} onClick={clearCategory}>
-              <div className={styles.pillContents}>
-                <FontAwesomeIcon className={styles.icon} icon={faXmark} />
-                <div className={styles.category}>{category}</div>
+          <div className={styles.flexContainer}>
+            <p>Filtered by:</p>
+            {category !== '' ? (
+              <div className={styles.categoryPill} onClick={clearCategory}>
+                <div className={styles.pillContents}>
+                  <FontAwesomeIcon className={styles.icon} icon={faXmark} />
+                  <div className={styles.category}>{category}</div>
+                </div>
               </div>
-            </div>
-          ) : (
-            <p>All Products</p>
-          )}
+            ) : (
+              <p>All Products</p>
+            )}
+          </div>
+          <div>
+            {/* <p>
+              Showing ${filteredTotal} of ${total}
+            </p> */}
+          </div>
         </div>
       </div>
       <div

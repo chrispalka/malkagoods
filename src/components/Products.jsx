@@ -49,7 +49,7 @@ export function Products({ products }) {
                   handleToggleModal({
                     title: product.summaries[0].itemName,
                     image: product.images[0].images[0].link,
-                    price: Math.round(product.price),
+                    price: parseFloat(product.price).toFixed(2),
                     description:
                       product.attributes?.product_description?.[0]?.value,
                   })
@@ -65,7 +65,7 @@ export function Products({ products }) {
                       {product.summaries[0].itemName}
                     </div>
                     <div className={styles.productDescription}>
-                      ${Math.round(product.price)}
+                      ${parseFloat(product.price).toFixed(2)}
                     </div>
                   </div>
                 </div>

@@ -101,8 +101,13 @@
   padding-top: 1rem;
 }
 
+.flexContainer {
+  display: flex;
+}
+
 .pillContainer {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   min-height: 35px;
 }
