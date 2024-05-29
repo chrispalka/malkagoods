@@ -12,3 +12,31 @@
 section {
   padding-top: 1rem !important;
 }
+
+#featured {
+  display: none;
+}
+
+/** TABLET **/
+
+@media (min-width: 48rem) {
+  #featured {
+    display: inherit;
+  }
+}
+
+/* LAPTOP DESKTOP */
+
+@media (min-width: 37.5rem) and (max-width: 80.0625rem) {
+  #featured {
+    display: inherit;
+  }
+}
+
+/* LARGE SCREENS */
+
+@media (min-width: 80.0625rem) {
+  #featured {
+    display: inherit;
+  }
+}

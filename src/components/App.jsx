@@ -84,6 +84,10 @@ export function App() {
     setCategory(category);
   };
 
+  const clearCategory = () => {
+    setCategory('');
+  };
+
   /** FILTERING */
 
   useEffect(() => {
@@ -121,7 +125,13 @@ export function App() {
           />
           <div className={styles.main}>
             <Featured images={featuredProducts} />
-            <Products products={filteredProducts} />
+            <Products
+              products={filteredProducts}
+              clearCategory={clearCategory}
+              category={category.slice(0, 1).toUpperCase() + category.slice(1)}
+              total={products.length}
+              filteredTotal={filteredProducts.length}
+            />
           </div>
         </div>
       </div>

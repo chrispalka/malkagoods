@@ -6,7 +6,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import Modal from 'react-modal';
 
-export function Products({ products }) {
+export function Products({
+  products,
+  clearCategory,
+  category,
+  filteredTotal,
+  total,
+}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProductDetails, setSelectedProductDetails] = useState({});
   const { lockScroll, unlockScroll } = useScrollLock();
@@ -39,6 +45,23 @@ export function Products({ products }) {
 
   return (
     <section id='products'>
+      <div className={styles.infoContainer}>
+        <div className={styles.pillContainer}>
+          <div className={styles.flexContainer}>
+            {category !== '' && (
+              <div className={styles.categoryPill} onClick={clearCategory}>
+                <div className={styles.pillContents}>
+                  <FontAwesomeIcon className={styles.icon} icon={faXmark} />
+                  <div className={styles.category}>{category}</div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+        <div>
+          {filteredTotal} of {total}
+        </div>
+      </div>
       <div className={styles.gridContainer}>
         {products.length > 0 && (
           <>

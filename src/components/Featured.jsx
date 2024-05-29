@@ -3,7 +3,7 @@ import { FeaturedCarousel } from './FeaturedCarousel';
 
 export function Featured({ images }) {
   return (
-    <section id='featured'>
+    <section id={styles.featured}>
       <FeaturedCarousel images={images} />
     </section>
   );
