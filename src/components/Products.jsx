@@ -1,6 +1,7 @@
 import { useState } from 'preact/hooks';
 import styles from './Products.module.css';
 import { Product } from './Product';
+import { Card } from './Card';
 import useScrollLock from '../hooks/useScrollLock';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -66,8 +67,9 @@ export function Products({
         {products.length > 0 && (
           <>
             {products.map((product, index) => (
-              <div
-                className={styles.item}
+              <Card
+                key={index}
+                product={product}
                 onClick={() =>
                   handleToggleModal({
                     title: product.summaries[0].itemName,
@@ -77,22 +79,7 @@ export function Products({
                       product.attributes?.product_description?.[0]?.value,
                   })
                 }
-              >
-                <div className={styles.card}>
-                  <img
-                    className={styles.productImage}
-                    src={product.images[0].images[0].link}
-                  />
-                  <div className={styles.detailsContainer}>
-                    <div className={styles.productTitle}>
-                      {product.summaries[0].itemName}
-                    </div>
-                    <div className={styles.productDescription}>
-                      ${parseFloat(product.price).toFixed(2)}
-                    </div>
-                  </div>
-                </div>
-              </div>
+              />
             ))}
           </>
         )}
