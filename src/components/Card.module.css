@@ -4,6 +4,7 @@
   overflow: hidden;
   padding: 5px;
   border-radius: 5px;
+  touch-action: manipulation;
 }
 
 .card {
