@@ -9,10 +9,6 @@
   font-size: 2em;
 }
 
-section {
-  padding-top: 1rem !important;
-}
-
 #featured {
   display: none;
 }
