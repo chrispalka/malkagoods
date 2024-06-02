@@ -19,6 +19,7 @@ export function App() {
   const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
+  const [cartTotal, setCartTotal] = useState(0);
 
   /** FETCH JSON PRODUCTS FROM S3 */
   useEffect(() => {
@@ -116,7 +117,7 @@ export function App() {
 
   return (
     <>
-      <Navbar handleSearchQuery={handleSearchQuery} />
+      <Navbar handleSearchQuery={handleSearchQuery} cartTotal={cartTotal} />
       <div className={styles.container}>
         <div className={styles.flexWrapper}>
           <Filter
@@ -131,6 +132,7 @@ export function App() {
               category={category.slice(0, 1).toUpperCase() + category.slice(1)}
               total={products.length}
               filteredTotal={filteredProducts.length}
+              setCartTotal={setCartTotal}
             />
           </div>
         </div>

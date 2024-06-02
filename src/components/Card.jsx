@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './Card.module.css';
 
-export function Card({ product, onClick }) {
+export function Card({ product, onClick, setCartTotal }) {
   const [quantity, setQuantity] = useState(1);
 
   const handleIncrease = () => {
@@ -12,6 +12,11 @@ export function Card({ product, onClick }) {
     if (quantity > 1) {
       setQuantity(quantity - 1);
     }
+  };
+
+  const handleAddToCart = () => {
+    setCartTotal((prevTotal) => prevTotal + quantity);
+    setQuantity(1);
   };
 
   return (
@@ -43,7 +48,12 @@ export function Card({ product, onClick }) {
             </button>
           </div>
           <div className={styles.addToCardContainer}>
-            <button className={styles.addToCartButton}>Add to cart</button>
+            <button
+              className={styles.addToCartButton}
+              onClick={handleAddToCart}
+            >
+              Add to cart
+            </button>
           </div>
         </div>
       </div>

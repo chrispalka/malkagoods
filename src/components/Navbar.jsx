@@ -3,7 +3,7 @@ import { faEnvelope, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Search } from './Search';
 import styles from '../components/Navbar.module.css';
 
-export function Navbar({ handleSearchQuery }) {
+export function Navbar({ handleSearchQuery, cartTotal }) {
   return (
     <div className={styles.navbar}>
       <div className={styles.container}>
@@ -19,6 +19,9 @@ export function Navbar({ handleSearchQuery }) {
             </div>
             <div className={styles.cartContainer}>
               <FontAwesomeIcon icon={faShoppingCart} />
+              {cartTotal > 0 && (
+                <div className={styles.cartQuantityContainer}>{cartTotal}</div>
+              )}
             </div>
           </div>
           <div className={styles.searchContainer}>

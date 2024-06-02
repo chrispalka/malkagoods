@@ -13,6 +13,7 @@ export function Products({
   category,
   filteredTotal,
   total,
+  setCartTotal,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProductDetails, setSelectedProductDetails] = useState({});
@@ -79,6 +80,7 @@ export function Products({
                       product.attributes?.product_description?.[0]?.value,
                   })
                 }
+                setCartTotal={setCartTotal}
               />
             ))}
           </>
