@@ -19,20 +19,6 @@ export function Products({
   const [selectedProductDetails, setSelectedProductDetails] = useState({});
   const { lockScroll, unlockScroll } = useScrollLock();
 
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      transform: 'translate(-50%, -50%)',
-      boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)',
-      borderRadius: '5px',
-      height: 'auto',
-      maxHeight: '80%',
-    },
-  };
-
   Modal.setAppElement('#app');
 
   const handleToggleModal = (product) => {
@@ -86,7 +72,7 @@ export function Products({
           </>
         )}
       </div>
-      <Modal isOpen={isModalOpen} style={customStyles}>
+      <Modal isOpen={isModalOpen} className={styles.modal}>
         <div className={styles.close}>
           <FontAwesomeIcon
             className={styles.icon}

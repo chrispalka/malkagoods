@@ -160,6 +160,20 @@
   cursor: pointer;
 }
 
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: 5px;
+  height: auto;
+  max-height: 80%;
+}
+
 /** TABLET **/
 
 @media (min-width: 48rem) {
@@ -219,5 +233,8 @@
   }
   .infoContainer {
     padding: 1rem 0.3375rem;
+  }
+  .modal {
+    left: 55%;
   }
 }

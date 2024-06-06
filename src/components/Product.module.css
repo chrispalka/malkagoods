@@ -34,7 +34,6 @@
 }
 
 .cartContainer {
-  margin-top: 1rem;
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -88,9 +87,6 @@
 @media (min-width: 37.5rem) and (max-width: 80.0625rem) {
   .card {
     width: 700px;
-  }
-  .flexContainer {
-    flex-direction: row;
   }
 }
 
