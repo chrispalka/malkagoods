@@ -4,7 +4,7 @@ import { FeaturedCarousel } from './FeaturedCarousel';
 export function Featured({ images }) {
   return (
     <section id={styles.featured}>
-      <FeaturedCarousel images={images} />
+      <FeaturedCarousel images={images} autoPlay={true} infiniteLoop={true} />
     </section>
   );
 }

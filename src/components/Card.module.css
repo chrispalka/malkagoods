@@ -35,10 +35,10 @@
   overflow: hidden;
 }
 
-.productDescription {
-  font-size: 14px;
-  margin-bottom: 0.5rem;
+.priceContainer {
   overflow: hidden;
+  color: green;
+  font-weight: 700;
   white-space: nowrap;
   text-overflow: ellipsis;
 }

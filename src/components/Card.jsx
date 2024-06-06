@@ -32,7 +32,7 @@ export function Card({ product, onClick, setCartTotal }) {
             <div className={styles.productTitle}>
               {product.summaries[0].itemName}
             </div>
-            <div className={styles.productDescription}>
+            <div className={styles.priceContainer}>
               ${parseFloat(product.price).toFixed(2)}
             </div>
           </div>

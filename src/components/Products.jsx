@@ -95,7 +95,10 @@ export function Products({
             onClick={() => handleToggleModal()}
           />
         </div>
-        <Product productDetails={selectedProductDetails} />
+        <Product
+          productDetails={selectedProductDetails}
+          setCartTotal={setCartTotal}
+        />
       </Modal>
     </section>
   );
