@@ -3,6 +3,7 @@ import useDebounce from '../hooks/debounce';
 import { Navbar } from './Navbar';
 import { Featured } from './Featured';
 import { Products } from './Products';
+import { Footer } from './Footer';
 import { Filter } from './Filter';
 import { fetchProducts } from '../api/S3Service';
 
@@ -137,6 +138,7 @@ export function App() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

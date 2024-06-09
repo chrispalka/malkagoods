@@ -13,9 +13,9 @@ export function Navbar({ handleSearchQuery, cartTotal }) {
           </div>
           <div className={styles.linkContainer}>
             <div className={styles.contactContainer}>
-              <a href='mailto:matthew@malkagoods.com'>
+              {/* <a href='mailto:matthew@malkagoods.com'>
                 <FontAwesomeIcon icon={faEnvelope} />
-              </a>
+              </a> */}
             </div>
             <div className={styles.cartContainer}>
               <FontAwesomeIcon icon={faShoppingCart} />

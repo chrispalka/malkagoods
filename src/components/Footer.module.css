@@ -1,0 +1,35 @@
+.footerContainer {
+  padding: 1rem;
+  color: #fff;
+}
+
+.container {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.contactContainer {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactContainer div {
+  padding: 0.5rem 0;
+}
+
+a {
+  color: #fff;
+  font-size: 0.9rem !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+footer {
+  background-color: var(--secondary-color);
+}
+
+p {
+  font-weight: 100;
+  font-size: 0.9rem;
+}
